@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="92cad95c-a755-42ae-9d1b-872e324c042f" name="Targi MyDevil" url="http://arielzielinski-projekty.pl/targi/">
-        <fileTransfer rootFolder="/domains/arielzielinski-projekty.pl/public_html/targi" host="s62.mydevil.net" port="21">
+      <webServer id="92cad95c-a755-42ae-9d1b-872e324c042f" name="Targi MyDevil" url="http://zielin92.usermd.net/targi/">
+        <fileTransfer rootFolder="/domains/zielin92.usermd.net/public_html/targi" host="s62.mydevil.net" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" accurateTimestamps="ALWAYS" shareSSLContext="true" />
           </advancedOptions>

@@ -15,7 +15,6 @@ function generateCalendar(year, month) {
 
 // Na przykład, jeśli year to 2024, a month to 2 (marzec), linia kodu ta obliczy, ile dni ma marzec 2024 roku.
 let firstDayOfMonth = new Date(year=year, month=month, day=0).getDay();
-//Ten kod sprawdza, czy firstDayOfMonth wynosi 0 (co oznacza niedzielę), a jeśli tak, to zmienia go na 7, co jest zgodne z konwencją tygodnia, w której 7 oznacza niedzielę. Dzięki temu poprawnie określisz, który dzień tygodnia jest pierwszym dniem miesiąca, a kalendarz będzie pokazywał poprawne dni tygodnia dla danego miesiąca.
     const calendarTable = document.createElement('table');
     calendarTable.classList.add('calendar-table');
     //tworzymy element HTML za pomocą createElement
@@ -64,7 +63,6 @@ let firstDayOfMonth = new Date(year=year, month=month, day=0).getDay();
     //informujemy, że tablica należy do contenera
     const currentMonthName = monthsOfYear[month];
     document.getElementById('current-month-name').textContent = currentMonthName;
-    //?
     updateNavigationButtons(year, month);
 }
 

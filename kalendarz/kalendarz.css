@@ -28,7 +28,12 @@ body, html {
     max-width: 1600px; /* maksymalna szerokość */
     border-collapse: collapse;
     /* Scalanie granic komórek, co sprawia, że ramki są bardziej jednolite i estetyczne.*/
-    margin-right: auto; /* Ustawienie marginesu prawego na auto powoduje, że tabela jest wyśrodkowana */
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.calendar-table td {
+    width: 150px; /* Każda kolumna będzie miała szerokość 150 pikseli */
 }
 
 .calendar-table th, .calendar-table td {
@@ -76,21 +81,21 @@ h1 {
     @media (min-width: 768px) {
         /* Dla ekranów większych niż 768px (np. komputerów) */
         #prev-month-btn {
-            left: 400px;
+            left: 7%;
         }
     
         #next-month-btn {
-            right: 400px;
+            right: 7%;
         }
     }
     
     @media (max-width: 767px) {
         /* Dla ekranów mniejszych lub równych 767px (np. telefony) */
         #prev-month-btn {
-            left: 5px;
+            left: 1px;
         }
     
         #next-month-btn {
-            right: 5px;
+            right: 1px;
         }
     }

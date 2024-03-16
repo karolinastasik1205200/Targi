@@ -58,13 +58,13 @@ h1 {
 
 #prev-month-btn {
     position: absolute;
-    top: 50%; /* Wyśrodkowanie przycisku pionowo */
+    top: 42%; /* Wyśrodkowanie przycisku pionowo */
     transform: translateY(-50%); /* Wyśrodkowanie przycisku pionowo */
 }
 
 #next-month-btn {
     position: absolute;
-    top: 50%; /* Wyśrodkowanie przycisku pionowo */
+    top: 42%; /* Wyśrodkowanie przycisku pionowo */
     transform: translateY(-50%); /* Wyśrodkowanie przycisku pionowo */
 }
 
@@ -76,11 +76,11 @@ h1 {
     @media (min-width: 768px) {
         /* Dla ekranów większych niż 768px (np. komputerów) */
         #prev-month-btn {
-            left: 350px;
+            left: 400px;
         }
     
         #next-month-btn {
-            right: 350px;
+            right: 400px;
         }
     }
     

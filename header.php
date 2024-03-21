@@ -12,25 +12,25 @@
 </head>
 <body>
 <!-- MENU -->
-<section class="menuSection">
+<section class="menu-section">
 
-    <div class="menuLogoSpace">
-        <img class="menuLogo" src="src/dimes.png" alt="Logo">
+    <div class="menu-logo-space">
+        <img class="menu-logo" src="src/dimes.png" alt="Logo">
     </div>
 
-    <div class="menuContent">
+    <div class="menu-content">
         <div>
             <span>
-                <a href="#"><i class="socialIcons facebookIcon fa fa-facebook"></i></a>
-                <a href="#"><i class="socialIcons youtubeIcon fa fa-youtube"></i></a>
-                <a href="#"><i class="socialIcons instagramIcon fa fa-instagram"></i></a>
+                <a href="#"><i class="social-icons facebook-icon fa fa-facebook"></i></a>
+                <a href="#"><i class="social-icons youtube-icon fa fa-youtube"></i></a>
+                <a href="#"><i class="social-icons instagram-icon fa fa-instagram"></i></a>
             </span>
-            <span class="searchBarSpan">
-                <input type="text" placeholder="Wyszukaj wydarzenie... " name="search" class="searchBar">
-                <i class="searchIcon fa fa-search"></i>
+            <span class="search-bar-span">
+                <input type="text" placeholder="Wyszukaj wydarzenie... " name="search" class="search-bar">
+                <i class="search-icon fa fa-search"></i>
             </span>
         </div>
-        <ul class="menuList">
+        <ul class="menu-list">
             <li>
                 <a href="index.php?id=1">STRONA GŁÓWNA</a>
             </li>
@@ -45,8 +45,8 @@
             </li>
         </ul>
     </div>
-    <form class="menuLoginForm">
-        <div class="containerLoginForm">
+    <form class="menu-login-form">
+        <div class="container-login-form">
             <label for="username"><b>Nazwa użytkownika</b></label>
             <input type="text" placeholder="Podaj nazwę użytkownika" name="username" required>
 
@@ -60,15 +60,15 @@
         </div>
 
         <div class="" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Anuluj</button>
+            <button type="button" class="cancel-btn">Anuluj</button>
             <span class="psw">Nie pamiętasz <a href="#">hasła?</a></span>
         </div>
     </form>
 
 </section>
 
-<div class="panelContainer">
-    <button type="button" class="zalogujButtonRozwin">Zaloguj
+<div class="panel-container">
+    <button type="button" class="zaloguj-button-rozwin">Zaloguj
         <div class="panel">
 
         </div>

@@ -3,8 +3,9 @@ body, html {
     /*Ustawienie wysokości elementów <body> i <html> na 100% wysokości okna przeglądarki.*/
     margin: 0;
     /*Resetowanie marginesów dla elementów <body> i <html>, eliminując domyślne marginesy przeglądarki.*/
-    font-family: Arial, sans-serif;
+    font-family: Ariel, sans-serif;
     /*Określenie preferowanej rodziny czcionek dla tekstu na stronie. Najpierw przeglądarka będzie próbować użyć czcionki Arial, a jeśli nie będzie dostępna, użyje dowolnej czcionki bezszeryfowej (sans-serif), która jest domyślną dla danego systemu operacyjnego.*/
+    background-color: #FFFFFF;
 }
 
 #calendar-container {
@@ -28,6 +29,7 @@ body, html {
     max-width: 1600px; /* maksymalna szerokość */
     border-collapse: collapse;
     /* Scalanie granic komórek, co sprawia, że ramki są bardziej jednolite i estetyczne.*/
+    border-color: #66B8D9;
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -37,15 +39,22 @@ body, html {
 }
 
 .calendar-table th, .calendar-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #66B8D9;
     padding: 10px;
     /*Ustawienie wewnętrznego marginesu dla komórek tabeli, aby oddzielić ich zawartość od krawędzi.*/
     text-align: center;
+   
 }
 
-.calendar-table th {
-    background-color: #f2f2f2;
+.calendar-table tr:first-child {
+    background-color: #66B8D9;
+    color: #253840;
 }
+.calendar-table tr:not(:first-child) {
+    background-color: #FFFFFF;
+    color: #253840; }
+
+
 
 .calendar-table td.day {
     cursor: pointer;
@@ -54,23 +63,30 @@ body, html {
 h1 {
     font-size: 40px;
     text-align: center; /* Wyśrodkowanie tekstu */
+    color: #D9667C;
 }
 #current-month-name {
     font-size: 24px;
     text-align: center; /* Wyśrodkowanie tekstu */
     margin-bottom: 30px; /* Dodanie odstępu od przycisków */ 
+    color: #D9667C;
+
 }
 
 #prev-month-btn {
     position: absolute;
     top: 42%; /* Wyśrodkowanie przycisku pionowo */
     transform: translateY(-50%); /* Wyśrodkowanie przycisku pionowo */
+    background-color: #D9D366;
+    color: #253840;
 }
 
 #next-month-btn {
     position: absolute;
     top: 42%; /* Wyśrodkowanie przycisku pionowo */
     transform: translateY(-50%); /* Wyśrodkowanie przycisku pionowo */
+    background-color: #D9D366;
+    color: #253840;
 }
 
 @media (max-width: 600px) {

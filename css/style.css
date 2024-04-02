@@ -149,6 +149,10 @@ body {
     flex-direction: column;
 }
 
+.menu-content-mobile {
+    display: none;
+}
+
 /* SITE CONTENT */
 
 .panel-container {
@@ -181,4 +185,58 @@ body {
     background-color: blue;
     width: 10px;
     height: 1000px;
+}
+
+
+
+/* MEDIA RWD */
+
+@media only screen and (max-width: 1410px) {
+    .menu-section {
+
+    }
+
+    .menu-logo-space {
+        width: fit-content;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+
+    .menu-content {
+        display: none;
+    }
+
+    .menu-login-form {
+        display: none;
+    }
+
+    .menu-content-mobile {
+        display: block;
+    }
+
+    .burger-container {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .burger-bars {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+    }
 }

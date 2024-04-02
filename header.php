@@ -9,13 +9,15 @@
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Event-Arena - Targi projekt zaliczeniowy</title>
+
+    <script type="text/javascript" src="js/javascript.js"></script>
 </head>
 <body>
 <!-- MENU -->
 <section class="menu-section">
 
     <div class="menu-logo-space">
-        <img class="menu-logo" src="src/dimes.png" alt="Logo">
+        <a href="index.php"><img class="menu-logo" src="src/dimes.png" alt="Logo"></a>
     </div>
 
     <div class="menu-content">
@@ -44,6 +46,36 @@
                 <a href="index.php?id=3">KONTAKT</a>
             </li>
         </ul>
+    </div>
+
+    <div class="menu-content-mobile">
+        <div class="search-bar-span-mobile">
+            <input type="text" placeholder="Wyszukaj wydarzenie... " name="search" class="search-bar-mobile">
+            <i class="search-icon fa fa-search"></i>
+        </div>
+        <div class="menu-burger">
+            <div class="burger-container" onclick="animateBurger(this)">
+                <div class="bar1 burger-bars"></div>
+                <div class="bar2 burger-bars"></div>
+                <div class="bar3 burger-bars"></div>
+            </div>
+            <div class="menu-list-mobile">
+                <ul>
+                    <li>
+                        <a href="index.php?id=1">STRONA GŁÓWNA</a>
+                    </li>
+                    <li>
+                        <a href="index.php?id=2">WYDARZENIA</a>
+                    </li>
+                    <li>
+                        <a href="index.php?id=3">KALENDARZ</a>
+                    </li>
+                    <li>
+                        <a href="index.php?id=3">KONTAKT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
     <form class="menu-login-form">
         <div class="container-login-form">

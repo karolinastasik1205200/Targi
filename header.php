@@ -48,18 +48,20 @@
         </ul>
     </div>
 
+    <div class="search-bar-span-mobile search-bar-span">
+        <input type="text" placeholder="Wyszukaj wydarzenie... " name="search" class="search-bar">
+        <i class="search-icon fa fa-search"></i>
+    </div>
+
     <div class="menu-content-mobile">
-        <div class="search-bar-span-mobile">
-            <input type="text" placeholder="Wyszukaj wydarzenie... " name="search" class="search-bar-mobile">
-            <i class="search-icon fa fa-search"></i>
-        </div>
-        <div class="menu-burger">
+
+        <div class="menu-burger" onclick="toggleMenu()">
             <div class="burger-container" onclick="animateBurger(this)">
                 <div class="bar1 burger-bars"></div>
                 <div class="bar2 burger-bars"></div>
                 <div class="bar3 burger-bars"></div>
             </div>
-            <div class="menu-list-mobile">
+            <div id="mobile-menu" class="menu-list-mobile-hidden">
                 <ul>
                     <li>
                         <a href="index.php?id=1">STRONA GŁÓWNA</a>

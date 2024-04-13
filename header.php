@@ -13,3 +13,6 @@
     <title>Targi - Projekt zaliczeniowy</title>
 </head>
 <body>
+<div class="menu-logo-space">
+        <a href="index.php"><img class="menu-logo" src="/Event Arena.png" alt="Logo"></a>
+    </div>

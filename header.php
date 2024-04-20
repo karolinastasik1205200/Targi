@@ -49,7 +49,7 @@
     </div>
 
     <div class="search-bar-span-mobile search-bar-span">
-        <input type="text" placeholder="Wyszukaj wydarzenie... " name="search" class="search-bar">
+        <input type="text" placeholder="Szukaj wydarzenie..." name="search" class="search-bar">
         <i class="search-icon fa fa-search"></i>
     </div>
 
@@ -76,10 +76,28 @@
                         <a href="index.php?id=3">KONTAKT</a>
                     </li>
                 </ul>
+                <ul class="log-reg-btns-mobile">
+                    <li>
+                        <a href="#">ZALOGUJ</a>
+                    </li>
+                    <li>
+                        <a href="#">ZAREJESTRUJ</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <form class="menu-login-form">
+    <div class="menu-list log-reg-btns">
+        <ul>
+            <li>
+                <a href="#">ZALOGUJ</a>
+            </li>
+            <li>
+                <a href="#">ZAREJESTRUJ</a>
+            </li>
+        </ul>
+    </div>
+    <!-- <form class="menu-login-form">
         <div class="container-login-form">
             <label for="username"><b>Nazwa użytkownika</b></label>
             <input type="text" placeholder="Podaj nazwę użytkownika" name="username" required>
@@ -97,17 +115,10 @@
             <button type="button" class="cancel-btn">Anuluj</button>
             <span class="psw">Nie pamiętasz <a href="#">hasła?</a></span>
         </div>
-    </form>
+    </form> -->
 
 </section>
 
-<div class="panel-container">
-    <button type="button" class="zaloguj-button-rozwin">Zaloguj
-        <div class="panel">
-
-        </div>
-    </button>
-</div>
 <?php
 
 if (isset($_GET['id'])) {
@@ -139,10 +150,3 @@ switch ($id) {
 }
 ?>
 
-<!-- TESTING ELEMENTS -->
-<div class="place">
-
-</div>
-<div class="place2">
-
-</div>

@@ -93,7 +93,7 @@
                 <a href="#">ZALOGUJ</a>
             </li>
             <li>
-                <a href="#">ZAREJESTRUJ</a>
+                <a href="register_page.php">ZAREJESTRUJ</a>
             </li>
         </ul>
     </div>
@@ -120,7 +120,7 @@
 </section>
 
 <?php
-
+/*
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
@@ -143,10 +143,14 @@ switch ($id) {
         echo "A to jest id 3";
         break;
     }
+    case ('register') : {
+        header("Location:register_page.php");
+        break;
+    }
     default :
     {
         echo "Strona Glówna";
     }
-}
+} */
 ?>
 

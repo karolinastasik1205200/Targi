@@ -1,0 +1,117 @@
+body, html {
+    height: 100%;
+    /*Ustawienie wysokości elementów <body> i <html> na 100% wysokości okna przeglądarki.*/
+    margin: 0;
+    /*Resetowanie marginesów dla elementów <body> i <html>, eliminując domyślne marginesy przeglądarki.*/
+    font-family: Ariel, sans-serif;
+    /*Określenie preferowanej rodziny czcionek dla tekstu na stronie. Najpierw przeglądarka będzie próbować użyć czcionki Arial, a jeśli nie będzie dostępna, użyje dowolnej czcionki bezszeryfowej (sans-serif), która jest domyślną dla danego systemu operacyjnego.*/
+    background-color: #FFFFFF;
+}
+
+#calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Wyśrodkowanie elementów wzdłuż osi X (poziomej) kontenera.*/
+    justify-content: center;
+    /*Wyśrodkowanie elementów wzdłuż osi Y (pionowej) kontenera.*/
+    height: 100%;
+    position: relative;
+}
+
+.calendar-header {
+    text-align: center;
+    /*Wyśrodkowanie tekstu wewnątrz nagłówka kalendarza.*/
+    }
+
+.calendar-table {
+    width: 95%;
+    max-width: 1600px; /* maksymalna szerokość */
+    border-collapse: collapse;
+    /* Scalanie granic komórek, co sprawia, że ramki są bardziej jednolite i estetyczne.*/
+    border-color: #66B8D9;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.calendar-table td {
+    width: 150px; /* Każda kolumna będzie miała szerokość 150 pikseli */
+}
+
+.calendar-table th, .calendar-table td {
+    border: 1px solid #66B8D9;
+    padding: 10px;
+    /*Ustawienie wewnętrznego marginesu dla komórek tabeli, aby oddzielić ich zawartość od krawędzi.*/
+    text-align: center;
+   
+}
+
+.calendar-table tr:first-child {
+    background-color: #66B8D9;
+    color: #253840;
+}
+.calendar-table tr:not(:first-child) {
+    background-color: #FFFFFF;
+    color: #253840; }
+
+
+
+.calendar-table td.day {
+    cursor: pointer;
+    /*Ustawienie kursora na wskazujący, aby wskazać, że komórki zawierające dni miesiąca są interaktywne i mogą być kliknięte.*/
+}
+h1 {
+    font-size: 40px;
+    text-align: center; /* Wyśrodkowanie tekstu */
+    color: #D9667C;
+}
+#current-month-name {
+    font-size: 24px;
+    text-align: center; /* Wyśrodkowanie tekstu */
+    margin-bottom: 30px; /* Dodanie odstępu od przycisków */ 
+    color: #D9667C;
+
+}
+
+#prev-month-btn {
+    position: absolute;
+    top: 42%; /* Wyśrodkowanie przycisku pionowo */
+    transform: translateY(-50%); /* Wyśrodkowanie przycisku pionowo */
+    background-color: #D9D366;
+    color: #253840;
+}
+
+#next-month-btn {
+    position: absolute;
+    top: 42%; /* Wyśrodkowanie przycisku pionowo */
+    transform: translateY(-50%); /* Wyśrodkowanie przycisku pionowo */
+    background-color: #D9D366;
+    color: #253840;
+}
+
+@media (max-width: 600px) {
+    .calendar-table {
+        font-size: 12px;
+    } }
+
+    @media (min-width: 768px) {
+        /* Dla ekranów większych niż 768px (np. komputerów) */
+        #prev-month-btn {
+            left: 7%;
+        }
+    
+        #next-month-btn {
+            right: 7%;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        /* Dla ekranów mniejszych lub równych 767px (np. telefony) */
+        #prev-month-btn {
+            left: 1px;
+        }
+    
+        #next-month-btn {
+            right: 1px;
+        }
+    }

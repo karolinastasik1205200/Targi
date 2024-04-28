@@ -1,6 +1,40 @@
-<?php require "header.php"?>
-<section>
-    <form action="register.php" method="post" class="">
+<?php require "header.php";
+/*
+function testInput($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = testInput($_POST['username']);
+    $nameErr = '';
+    if (!preg_match('/^[a-zA-Z0-9 ]*$/', $name)) {
+        $nameErr = "Dozwolone są tylko litery";
+    }
+
+    $email2 = testInput($_POST['email']);
+    $emailErr = '';
+    if (!filter_var($email2, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = 'Niewłaściwy format adresu e-mail';
+    }
+
+    $passwordErr = '';
+    if (empty($_POST['password'])) {
+        $passwordErr = "Pole hasła nie może być puste";
+    } else {
+        $password2 = $_POST['password'];
+        if (strlen($password2) < 6) {
+            $passwordErr = "Hasło musi posiadać co najmniej 6 znaków";
+        }
+    }
+}
+*/
+?>
+
+<section class="section-register-form">
+    <form action="register.php" method="post" class="register-form">
         <div>
             <label for="username">Podaj nazwę użytkownika:</label>
             <input type="text" name="username" id="username" placeholder="Nazwa użytkownika" required>
@@ -22,7 +56,7 @@
         </div>
 
         <div>
-            <button type="submit">Zarejestruj</button>
+            <input type="submit" name="submit" value="Zarejestruj" class="register-btn">
         </div>
     </form>
 </section>

@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <section class="section-register-form">
+    <h1>Formularz rejestracji</h1>
     <form action="register.php" method="post" class="register-form">
         <div>
             <label for="username">Podaj nazwę użytkownika:</label>
@@ -48,9 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div>
             <label for="password">Podaj hasło:</label>
             <input type="password" name="password" id="password" placeholder="Hasło" required>
-        </div>
 
-        <div>
             <label for="confirm-password">Potwierdź swoje hasło:</label>
             <input type="password" name="confirm_password" id="confirm-password" placeholder="Potwierdź hasło" required>
         </div>

@@ -172,18 +172,58 @@ body {
 /* REGISTER SITE */
 
 .section-register-form {
-    width: 80%;
+    width: 50%;
     margin: auto;
 }
 
+.section-register-form h1 {
+    text-transform: uppercase;
+    color: #4A5559;
+    font-weight: 900;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    padding: 50px 0 40px 0;
+}
+
+form.register-form {
+    border-radius: 20px;
+    background: #6E8D99;
+    margin: auto;
+    padding: 20px 0;
+}
+
 form.register-form div {
+    width: 80%;
     display: flex;
     flex-direction: column;
-    padding: 30px 40px;
+    padding: 10px 0;
+    margin: auto;
 }
 
 form.register-form div label, form.register-form div input {
+    padding: 10px 0;
+    color: #4A5559;
+}
 
+form.register-form div label {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+form.register-form div input {
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+form.register-form .register-btn {
+    font-weight: 600;
+    font-size: 22px;
+    color: #4A5559;
+    background: #66B8D9;
+    border: none;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.20);
+    transition: all 0.2s;
 }
 
 /* MEDIA RWD */

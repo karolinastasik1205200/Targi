@@ -197,7 +197,7 @@ form.register-form div {
     width: 80%;
     display: flex;
     flex-direction: column;
-    padding: 10px 0;
+    padding: 15px 0;
     margin: auto;
 }
 
@@ -209,11 +209,12 @@ form.register-form div label, form.register-form div input {
 form.register-form div label {
     font-weight: 600;
     font-size: 20px;
+    text-shadow: 1px 1px rgba(0,0,0,.20);
 }
 
 form.register-form div input {
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 form.register-form .register-btn {

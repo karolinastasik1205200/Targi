@@ -169,7 +169,22 @@ body {
 
 /* SITE CONTENT */
 
+/* REGISTER SITE */
 
+.section-register-form {
+    width: 80%;
+    margin: auto;
+}
+
+form.register-form div {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+}
+
+form.register-form div label, form.register-form div input {
+
+}
 
 /* MEDIA RWD */
 

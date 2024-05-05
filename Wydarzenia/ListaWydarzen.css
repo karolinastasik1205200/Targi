@@ -1,0 +1,35 @@
+#event-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+h1 {
+    text-align: center;
+}
+
+#event-list img {
+    width: 80%; /* Ustaw szerokość zdjęcia na 100% kontenera */
+    height: auto; /* Ustaw wysokość zdjęcia na auto, aby zachować proporcje */
+}
+
+@media(min-width: 768px) {
+    #event-list li {
+        width: 25%;
+        margin-bottom: 20px;
+        text-align: center;
+        cursor: pointer;
+} 
+}
+
+@media(max-width: 768px) {
+#event-list li {
+    width: 80%;
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin: auto;
+}
+}

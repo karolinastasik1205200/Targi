@@ -120,7 +120,7 @@ body {
     font-weight: bold;
     padding: 15px 10px;
     margin: 0 10px;
-    background-color: lightblue;
+    background: #66B8D9;
     border-radius: 10px;
     box-shadow: 3px 3px 3px rgba(0,0,0,.20);
     transition: all .2s ease-in-out;
@@ -215,9 +215,11 @@ form.register-form div label {
 form.register-form div input {
     border-radius: 20px;
     font-size: 15px;
+    padding-left: 10px;
 }
 
 form.register-form .register-btn {
+    width: fit-content;
     font-weight: 600;
     font-size: 22px;
     color: #4A5559;
@@ -225,6 +227,22 @@ form.register-form .register-btn {
     border: none;
     box-shadow: 3px 3px 3px rgba(0,0,0,.20);
     transition: all 0.2s;
+    padding: 12px 30px;
+    margin: auto;
+}
+
+form.register-form .register-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px rgba(0,0,0,.20);
+    transition: all 0.2s;
+}
+
+#jsValidUser, #jsValidEmail, #jsValidPass {
+    color: #D9A266;
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: 1px 1px rgba(0,0,0,.20);
+    padding: 10px 15px;
 }
 
 /* MEDIA RWD */

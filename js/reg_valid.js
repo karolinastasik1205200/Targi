@@ -13,8 +13,8 @@ function validateForm() {
 
     if (!isUserNameValid(username)) {
         errors[0] = "Dozwolone są tylko litery i cyfry oraz spacje w nazwie użytkownika!";
-    } else if (username.trim() === '') {
-        errors[0] = "Wpisz nazwę użytkownika!"
+    } else if (username.length < 5) {
+        errors[0] = "Nazwa użytkownika jest zbyt krótka! Musi posiadać co najmniej 5 znaków!"
     }
 
     if (!validateEmail(email)) {

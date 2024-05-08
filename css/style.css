@@ -237,7 +237,7 @@ form.register-form .register-btn:hover {
     transition: all 0.2s;
 }
 
-#jsValidUser, #jsValidEmail, #jsValidPass {
+#jsValidUser, #jsValidEmail, #jsValidPass, #jsValidConPass {
     color: #D9A266;
     font-size: 16px;
     font-weight: 600;

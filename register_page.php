@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label for="confirm-password">Potwierdź swoje hasło:</label>
             <input type="password" name="confirm_password" id="confirm-password" placeholder="Potwierdź hasło" required>
-            <span id="jsValidPass"></span>
+            <span id="jsValidConPass"></span>
         </div>
 
         <div>

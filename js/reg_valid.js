@@ -43,7 +43,6 @@ function validateForm() {
     } else if (validateConPass(confirmPassword) > 50) {
         errors[3] = "Hasło nie może posiadać więcej niż 50 znaków!";
     } else if (password !== confirmPassword) {
-        errors[2] = "Podane hasła nie są tożsame!";
         errors[3] = "Podane hasła nie są tożsame!";
     }
 

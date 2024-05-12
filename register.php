@@ -95,6 +95,7 @@
         $passwordErr = '';
         $confirm_passwordErr = '';
         $registerInfo = '';
+        $registerErr = '';
 
 
         if (!preg_match('/^[a-zA-Z0-9][a-zA-Z0-9\s]*[a-zA-Z0-9]$/', $username)) {
@@ -120,7 +121,7 @@
         }
 
         if ($password !== $confirm_password) {
-            $confirm_passwordErr = 'Podane hasła nie są zgodne!';
+            $confirm_passwordErr = 'Podane hasła nie są tożsame!';
         }
 
         if (empty($usernameErr) && empty($emailErr) && empty($passwordErr) && empty($confirm_passwordErr)) {
@@ -137,34 +138,67 @@
                 $stmt->bindParam(':password', $hashed_password);
 
                 $stmt->execute();
-                $registerInfo = 'Rejestracja zakończona pomyślnie.';
+                $registerInfo = '<p class="regInfo">Rejestracja zakończona pomyślnie.</p>';
 
             } catch (PDOException $e) {
-                $registerInfo = 'Błąd podczas rejestracji: ' . $e->getMessage();
+                $registerErr = '<p class="regInfo">Błąd podczas rejestracji</p>' . '<p>' . $e->getMessage() . '</p>';
             }
             $db = null;
         } elseif (!empty($usernameErr) || !empty($emailErr) || !empty($passwordErr) || !empty($confirm_passwordErr)) {
-            if (!empty($usernameErr)) {
-                $usernameErr;
-            } elseif (!empty($emailErr)) {
-                $emailErr;
-            } elseif (!empty($passwordErr)) {
-                $passwordErr;
-            } elseif (!empty($confirm_passwordErr)) {
-                $confirm_passwordErr;
-            }
+//            if (!empty($usernameErr)) {
+//               echo $usernameErr;
+//            } elseif (!empty($emailErr)) {
+//                echo $emailErr;
+//            } elseif (!empty($passwordErr)) {
+//                echo $passwordErr;
+//            } elseif (!empty($confirm_passwordErr)) {
+//                echo $confirm_passwordErr;
+//            }
+            $registerErr = "<p class='regInfo'>Błąd podczas rejestracji</p>";
         }
         ?>
         <ul>
-            <li>
-                <p><?php echo $registerInfo; ?></p>
-            </li>
-            <li>
-                <?php if (!empty($usernameErr)) {echo "<p>Nazwa użytkownika: $usernameErr </p>";}?>
-            </li>
-            <li>
-                <p>Na podany adres e-mail została wysłana wiadomość, z dalszymi instrukcjami dotyczącymi konta użytkownika.</p>
-            </li>
+
+            <?php
+            if (!empty($registerInfo)) {
+                echo "<li>
+                        $registerInfo
+                      </li>";
+            } elseif (!empty($registerErr)) {
+                echo "<li>
+                        $registerErr
+                      </li>";
+            }
+
+            if (!empty($usernameErr)) {
+                echo "<li>
+                        <p>Nazwa użytkownika: $usernameErr </p>
+                      </li>";
+            }
+            if (!empty($emailErr)) {
+                echo "<li>
+                        <p>E-mail: $emailErr</p>
+                      </li>";
+            }
+            if (!empty($passwordErr)) {
+                echo "<li>
+                        <p>Hasło: $passwordErr</p>
+                      </li>";
+            }
+            if (!empty($confirm_passwordErr)) {
+                echo "<li>
+                        <p>Potwierdzenie hasła: $confirm_passwordErr</p>
+                      </li>";
+            }
+
+
+            if (empty($usernameErr) && empty($emailErr) && empty($passwordErr) && empty($confirm_passwordErr) && empty($registerErr)) {
+                echo "<li>
+                        <p>Na podany adres e-mail została wysłana wiadomość, z dalszymi instrukcjami dotyczącymi konta użytkownika.</p>
+                      </li>";
+            }
+            ?>
+
         </ul>
     </div>
 </section>

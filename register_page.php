@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 */
 ?>
-<!--<script src="js/reg_valid.js"></script>-->
+<script src="js/reg_valid.js"></script>
 <section class="section-register-form">
     <h1>Formularz rejestracji</h1>
     <form id="register-form" action="register.php" method="post" class="register-form">

@@ -1,5 +1,7 @@
 
 function validateForm() {
+
+
     var username = document.forms["register-form"]["username"].value;
     var errorUser = document.getElementById("jsValidUser");
 
@@ -14,7 +16,11 @@ function validateForm() {
 
     var errors = ["", "", "", ""]; // Indeksy odpowiadają identyfikatorom elementów
 
-    if (username.length < 5) {
+
+
+    if (username === "") {
+        errors[0] = "Pole nazwy użytkownika jest wymagane. Wpisz nazwę użytkownika!";
+    } else if (username.length < 5) {
         errors[0] = "Nazwa użytkownika jest zbyt krótka! Musi posiadać co najmniej 5 znaków!";
     } else if (username.length > 50 ) {
         errors[0] = "Nazwa użytkownika nie może być dłuższa niż 50 znaków!";
@@ -34,14 +40,12 @@ function validateForm() {
         errors[2] = "Hasło musi posiadać co najmniej 6 znaków!";
     } else if (validatePass(password) > 50) {
         errors[2] = "Hasło nie może posiadać więcej niż 50 znaków!";
+    } else if (!isPasswordStrong(password)) {
+        errors[2] = "Hasło musi zawierać co najmniej jedną małą literę, jedną dużą literę, jedną cyfrę oraz jeden znak specjalny!";
     }
 
     if (confirmPassword === "") {
         errors[3] = "Pole potwierdzenia hasła nie może być puste! Potwierdź hasło!";
-    } else if (validateConPass(confirmPassword) < 6) {
-        errors[3] = "Hasło musi posiadać co najmniej 6 znaków!";
-    } else if (validateConPass(confirmPassword) > 50) {
-        errors[3] = "Hasło nie może posiadać więcej niż 50 znaków!";
     } else if (password !== confirmPassword) {
         errors[3] = "Podane hasła nie są tożsame!";
     }
@@ -52,16 +56,17 @@ function validateForm() {
         errorEmail.innerHTML = errors[1];
         errorPass.innerHTML = errors[2];
         errorConPass.innerHTML = errors[3];
+        event.preventDefault(); // Zatrzymuje domyślne zachowanie przeglądarki
         return false;
     } else {
         errorUser.innerHTML = "";
         errorEmail.innerHTML = "";
         errorPass.innerHTML = "";
         errorConPass.innerHTML = "";
+        document.getElementById("register-form").submit(); // Wysyła formularz po pomyślnym walidowaniu
         return true;
     }
 }
-
 
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -83,3 +88,9 @@ function validateConPass(confirmPassword) {
     var conPass = String(confirmPassword).length;
     return conPass;
 }
+
+function isPasswordStrong(password) {
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password);
+}
+
+

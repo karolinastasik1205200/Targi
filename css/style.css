@@ -273,6 +273,18 @@ form.register-form .register-btn:hover {
     font-size: 18px;
 }
 
+
+
+/* FOOTER */
+
+.fot {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    bottom: 0;
+    background: #66B8D9;
+}
+
 /* MEDIA RWD */
 
 @media only screen and (max-width: 1410px) {

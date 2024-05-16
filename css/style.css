@@ -168,6 +168,14 @@ body {
 
 /* SITE CONTENT */
 
+.siteContent {
+    min-height: 800px;
+    width: 100%;
+    background: #FFF;
+}
+
+/* FOOTER */
+
 
 
 /* MEDIA RWD */

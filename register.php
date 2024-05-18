@@ -74,6 +74,9 @@
         $db = null;
         */
 
+        require 'vendor/autoload.php';
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\Exception;
 
         function testInput($data)
         {
@@ -89,6 +92,7 @@
             $email = testInput($_POST['email']);
             $password = $_POST['password'];
             $confirm_password = $_POST['confirm_password'];
+            $token = bin2hex(random_bytes(16));
         }
         $usernameErr = '';
         $emailErr = '';
@@ -123,6 +127,10 @@
         if ($password !== $confirm_password) {
             $confirm_passwordErr = 'Podane hasła nie są tożsame!';
         }
+        $to = $email;
+        $subject = 'Rejestracja w serwisie Event-arena.org.pl.';
+        $message = 'Przykładowa treść wiadomości.';
+        mail($to, $subject, $message);
 
         if (empty($usernameErr) && empty($emailErr) && empty($passwordErr) && empty($confirm_passwordErr)) {
             try {
@@ -130,15 +138,50 @@
 
                 require_once 'db_connect.php';
 
-                $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+                $sql = "INSERT INTO users (username, email, password, token) VALUES (:username, :email, :password, :token)";
                 $stmt = $db->prepare($sql);
 
                 $stmt->bindParam(':username', $username);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $hashed_password);
+                $stmt->bindParam(':token', $token);
 
                 $stmt->execute();
                 $registerInfo = '<p class="regInfo">Rejestracja zakończona pomyślnie.</p>';
+
+                // Próba wysłania maila po zarejestrowaniu użytkownika
+
+                // stara próba wysłania przez wbudowaną metode php mail();
+
+//                $to = $_POST['email'];
+//                $subject = 'Rejestracja w serwisie Event-arena.org.pl.';
+//                $message = 'Przykładowa treść wiadomości.';
+//                $emailSent = mail($to, $subject, $message);
+//                $emailSent->send();
+
+                // Próba wysłania maila przez biblioteke PHPMailer
+
+                $mail = new PHPMailer(true);
+
+                $mail->isSMTP();
+                $mail->Host = 'mail62.mydevil.net';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'rejestracja@event-arena.org.pl';
+                $mail->Password = 'R$nGz+LTr+s63awY.5ZZo9vn~J6_GQ';
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
+
+                // Recipients
+                $mail->setFrom('rejestracja@event-arena.org.pl', 'Mailer');
+                $mail->addAddress($email, $username);
+
+                // Content
+                $mail->isHTML(true);
+                $mail->Subject = 'Aktywuj swoje konto w serwisie Event-Arena.org.pl';
+                $mail->Body    = "Kliknij w link, aby aktywować swoje konto użytkownika: <a href='http://event-arena.org.pl/activate.php?token=$token'>Aktywuj moje konto!</a>";
+
+                $mail->send();
+
 
             } catch (PDOException $e) {
                 $registerErr = '<p class="regInfo">Błąd podczas rejestracji</p>' . '<p>' . $e->getMessage() . '</p>';

@@ -127,10 +127,7 @@
         if ($password !== $confirm_password) {
             $confirm_passwordErr = 'Podane hasła nie są tożsame!';
         }
-        $to = $email;
-        $subject = 'Rejestracja w serwisie Event-arena.org.pl.';
-        $message = 'Przykładowa treść wiadomości.';
-        mail($to, $subject, $message);
+
 
         if (empty($usernameErr) && empty($emailErr) && empty($passwordErr) && empty($confirm_passwordErr)) {
             try {

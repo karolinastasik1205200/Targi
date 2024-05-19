@@ -5,74 +5,6 @@
     <div class="register-form register-form-answer">
 
         <?php
-        /*
-        function testInput($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $name = testInput($_POST['username']);
-            $nameErr = '';
-            if (!preg_match('/^[a-zA-Z0-9 ]*$/', $name)) {
-                $nameErr = "Dozwolone są tylko litery";
-            }
-
-            $email2 = testInput($_POST['email']);
-            $emailErr = '';
-            if (!filter_var($email2, FILTER_VALIDATE_EMAIL)) {
-                $emailErr = 'Niewłaściwy format adresu e-mail';
-            }
-
-            $passwordErr = '';
-            if (empty($_POST['password'])) {
-                $passwordErr = "Pole hasła nie może być puste";
-            } else {
-                $password2 = $_POST['password'];
-                if (strlen($password2) < 6) {
-                    $passwordErr = "Hasło musi posiadać co najmniej 6 znaków";
-                }
-            }
-        }
-        if ($nameErr != '' && $emailErr != '' && $passwordErr != '') {
-
-        }
-        try {
-
-
-
-
-            require_once "db_connect.php";
-
-            $username = $_POST['username'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $confirm_password = $_POST['confirm_password'];
-
-            if ($password !== $confirm_password) {
-                echo "Podane hasła nie są zgodne!";
-                exit();
-            }
-
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-            $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
-            $stmt = $db->prepare($sql);
-
-            $stmt->bindParam(':username', $username);
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':password', $hashed_password);
-
-            $stmt->execute();
-
-            echo "Rejestracja zakończona pomyslnie.";
-        } catch (PDOException $e) {
-            echo "Błąd podczas rejestracji: " . $e->getMessage();
-        }
-        $db = null;
-        */
 
         require 'vendor/autoload.php';
         use PHPMailer\PHPMailer\PHPMailer;
@@ -146,15 +78,6 @@
                 $stmt->execute();
                 $registerInfo = '<p class="regInfo">Rejestracja zakończona pomyślnie.</p>';
 
-                // Próba wysłania maila po zarejestrowaniu użytkownika
-
-                // stara próba wysłania przez wbudowaną metode php mail();
-
-//                $to = $_POST['email'];
-//                $subject = 'Rejestracja w serwisie Event-arena.org.pl.';
-//                $message = 'Przykładowa treść wiadomości.';
-//                $emailSent = mail($to, $subject, $message);
-//                $emailSent->send();
 
                 // Próba wysłania maila przez biblioteke PHPMailer
 
@@ -181,19 +104,22 @@
 
 
             } catch (PDOException $e) {
-                $registerErr = '<p class="regInfo">Błąd podczas rejestracji</p>' . '<p>' . $e->getMessage() . '</p>';
+                if ($e->getCode() == 23000) { // Kod błędu dla naruszenia unikalności
+                    // Sprawdź, które pole spowodowało błąd
+                    if (strpos($e->getMessage(), 'username') !== false) {
+                        $usernameErr = "Nazwa użytkownika jest już zajęta. Wybierz inną nazwę.";
+                    } elseif (strpos($e->getMessage(), 'email') !== false) {
+                        $emailErr = "Adres e-mail jest już zarejestrowany. Użyj innego adresu e-mail.";
+                    } else {
+                        $registerErr = '<p class="regInfo">Błąd podczas rejestracji: Naruszenie unikalności</p>';
+                    }
+                } else {
+                    $registerErr = '<p class="regInfo">Błąd podczas rejestracji</p>';
+                }
+                $registerErr = '<p class="regInfo">Błąd podczas rejestracji</p>';
             }
             $db = null;
         } elseif (!empty($usernameErr) || !empty($emailErr) || !empty($passwordErr) || !empty($confirm_passwordErr)) {
-//            if (!empty($usernameErr)) {
-//               echo $usernameErr;
-//            } elseif (!empty($emailErr)) {
-//                echo $emailErr;
-//            } elseif (!empty($passwordErr)) {
-//                echo $passwordErr;
-//            } elseif (!empty($confirm_passwordErr)) {
-//                echo $confirm_passwordErr;
-//            }
             $registerErr = "<p class='regInfo'>Błąd podczas rejestracji</p>";
         }
         ?>

@@ -1,37 +1,5 @@
-<?php require "header.php";
-/*
-function testInput($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
+<?php require "header.php"; ?>
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = testInput($_POST['username']);
-    $nameErr = '';
-    if (!preg_match('/^[a-zA-Z0-9 ]*$/', $name)) {
-        $nameErr = "Dozwolone są tylko litery";
-    }
-
-    $email2 = testInput($_POST['email']);
-    $emailErr = '';
-    if (!filter_var($email2, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = 'Niewłaściwy format adresu e-mail';
-    }
-
-    $passwordErr = '';
-    if (empty($_POST['password'])) {
-        $passwordErr = "Pole hasła nie może być puste";
-    } else {
-        $password2 = $_POST['password'];
-        if (strlen($password2) < 6) {
-            $passwordErr = "Hasło musi posiadać co najmniej 6 znaków";
-        }
-    }
-}
-*/
-?>
 <script src="js/reg_valid.js"></script>
 <section class="section-register-form">
     <h1>Formularz rejestracji</h1>

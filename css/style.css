@@ -181,7 +181,9 @@ body {
 	width: max-content;
 	position: relative;
 }
-
+.div-size {
+	width: 33%;
+}
 .background-image {
 	position: absolute;
 	top: 0;

@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -15,6 +15,7 @@
     <title>Event-Arena - Targi projekt zaliczeniowy</title>
 
     <script type="text/javascript" src="js/javascript.js"></script>
+    <script type="text/javascript" src="js/login_valid.js"></script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
 <section class="menu-section">
 
     <div class="menu-logo-space">
-        <a href="index.php"><img class="menu-logo" src="/Event Arena.png" alt="Logo"></a>
+        <a href="index.php"><img class="menu-logo" src="/src/Event%20Arena.png" alt="Logo"></a>
     </div>
 
     <div class="menu-content">
@@ -95,12 +96,34 @@
     <div class="menu-list log-reg-btns">
         <ul>
             <li>
-                <a href="#">ZALOGUJ</a>
+                <a href="#" onclick="toggleLoginForm()">ZALOGUJ</a>
             </li>
             <li>
                 <a href="register_page.php">ZAREJESTRUJ</a>
             </li>
         </ul>
+    </div>
+    <div id="login-form-container" class="login-hidden">
+        <div class="login-background" onclick="toggleLoginForm()"></div>
+        <div class="login-form-box">
+            <form id="login-form" action="login.php" method="post" class="login-form">
+                <div>
+                    <label for="username">Nazwa użytkownika:</label>
+                    <input type="text" name="username" id="username" required>
+                    <span id="jsValidUserLogin"></span>
+                </div>
+
+                <div>
+                    <label for="password">Hasło:</label>
+                    <input type="password" name="password" id="password" required>
+                    <span id="jsValidPassLogin"></span>
+                </div>
+
+                <div>
+                    <input type="submit" value="Zaloguj się" name="submit" class="login-form-btn" onclick="loginValidateForm()">
+                </div>
+            </form>
+        </div>
     </div>
     <!-- <form class="menu-login-form">
         <div class="container-login-form">

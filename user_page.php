@@ -1,8 +1,8 @@
 <?php
-session_start();
+require 'header.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 
@@ -10,4 +10,8 @@ if (!isset($_SESSION['user_id'])) {
 echo "Witaj, " . $_SESSION['username'] . "!";
 ?>
 
-<button><a href="logout.php">Wyloguj</a></button>
+<!--<button><a href="logout.php">Wyloguj</a></button>-->
+
+<?php
+require 'footer.php';
+?>

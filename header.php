@@ -1,10 +1,13 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="pl">
 <head>
-<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-<link rel="manifest" href="favicon_io/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -83,24 +86,50 @@
                     </li>
                 </ul>
                 <ul class="log-reg-btns-mobile">
-                    <li>
-                        <a href="#">ZALOGUJ</a>
-                    </li>
-                    <li>
-                        <a href="#">ZAREJESTRUJ</a>
-                    </li>
+                    <?php
+                    if (!isset($_SESSION['user_id'])) {
+                        echo
+                        '<li>
+                            <a href="mobile_login_form.php">ZALOGUJ</a>
+                        </li>
+                        <li>
+                            <a href="register_page.php">ZAREJESTRUJ</a>
+                        </li>';
+                    } else {
+                        echo
+                        '<li>
+                            <a href="user_page.php">KONTO</a>
+                        </li>
+                        <li>
+                            <a href="logout.php">WYLOGUJ</a>
+                        </li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
     </div>
     <div class="menu-list log-reg-btns">
         <ul>
-            <li>
-                <a href="#" onclick="toggleLoginForm()">ZALOGUJ</a>
-            </li>
-            <li>
-                <a href="register_page.php">ZAREJESTRUJ</a>
-            </li>
+            <?php
+            if (!isset($_SESSION['user_id'])) {
+                echo
+                '<li>
+                    <a href="#" onclick="toggleLoginForm()">ZALOGUJ</a>
+                </li>
+                <li>
+                    <a href="register_page.php">ZAREJESTRUJ</a>
+                </li>';
+            } else {
+                echo
+                '<li>
+                    <a href="user_page.php">KONTO</a>
+                </li>
+                <li>
+                    <a href="logout.php">WYLOGUJ</a>
+                </li>';
+            }
+            ?>
         </ul>
     </div>
     <div id="login-form-container" class="login-hidden">
@@ -120,65 +149,20 @@
                 </div>
 
                 <div>
+                    <input type="checkbox" name="rememberMe" id="rememberMe">
+                    <label for="rememberMe">Zapamiętaj mnie</label>
+                </div>
+
+                <div>
                     <input type="submit" value="Zaloguj się" name="submit" class="login-form-btn" onclick="loginValidateForm()">
+                </div>
+                <div>
+                    <a href="forgot_password.html">Zapomniałeś hasła?</a>
+                    <span>Nie posiadasz konta? <a href="register_page.php">Zarejestruj się</a></span>
                 </div>
             </form>
         </div>
     </div>
-    <!-- <form class="menu-login-form">
-        <div class="container-login-form">
-            <label for="username"><b>Nazwa użytkownika</b></label>
-            <input type="text" placeholder="Podaj nazwę użytkownika" name="username" required>
-
-            <label for="psw"><b>Hasło</b></label>
-            <input type="password" placeholder="Podaj hasło" name="psw" required>
-
-            <button type="submit">Zaloguj</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Zapamiętaj
-            </label>
-        </div>
-
-        <div class="" style="background-color:#f1f1f1">
-            <button type="button" class="cancel-btn">Anuluj</button>
-            <span class="psw">Nie pamiętasz <a href="#">hasła?</a></span>
-        </div>
-    </form> -->
-
 </section>
 
-<?php
-/*
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-} else {
-    $id = "";
-}
-
-switch ($id) {
-    case ('1') :
-    {
-        echo "To jest id 1";
-        break;
-    }
-    case ('2') :
-    {
-        echo "To jest id 2";
-        break;
-    }
-    case ('3') :
-    {
-        echo "A to jest id 3";
-        break;
-    }
-    case ('register') : {
-        header("Location:register_page.php");
-        break;
-    }
-    default :
-    {
-        echo "Strona Glówna";
-    }
-} */
-?>
 

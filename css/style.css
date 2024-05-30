@@ -309,6 +309,7 @@ form.register-form .register-btn:hover, form.login-form .login-form-btn:hover {
 	overflow: hidden;
 }
 
+
 .body-scroll-hide {
 	overflow: hidden;
 }
@@ -495,5 +496,22 @@ form.register-form .register-btn:hover, form.login-form .login-form-btn:hover {
 
 	.search-icon {
 		right: 2px;
+	}
+
+	.mobile-login-form {
+		width: 100%;
+		height: 60vh;
+		padding: 100px 0;
+	}
+
+	.log-reg-btns {
+		display: none;
+	}
+
+}
+
+@media only screen and (max-height: 660px) {
+	.menu-list-mobile-active ul li a {
+		font-size: 30px;
 	}
 }

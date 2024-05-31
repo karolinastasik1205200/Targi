@@ -1,35 +1,37 @@
-#event-list {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+body, html {
+    font-family: Ariel, sans-serif;
+    background-color: #FFFFFF;
+}
+
+.event {
+    display: inline-block;
+    width: 22%; 
+    margin: 1%; 
+    vertical-align: top; 
+    text-align: center;
+}
+
+.event-image {
+    width: 100%;
+    height: auto;
 }
 
 h1 {
     text-align: center;
+    color: #4A5559;
 }
 
-#event-list img {
-    width: 80%; /* Ustaw szerokość zdjęcia na 100% kontenera */
-    height: auto; /* Ustaw wysokość zdjęcia na auto, aby zachować proporcje */
+a {
+    color: #4A5559;
 }
 
-@media(min-width: 768px) {
-    #event-list li {
-        width: 25%;
-        margin-bottom: 20px;
-        text-align: center;
-        cursor: pointer;
-} 
+p {
+    color: #4A5559;
 }
 
-@media(max-width: 768px) {
-#event-list li {
-    width: 80%;
-    margin-bottom: 20px;
-    text-align: center;
-    cursor: pointer;
-    margin: auto;
-}
+@media screen and (max-width: 768px) {
+    .event {
+        width: 100%;
+        margin: 0;
+    }
 }

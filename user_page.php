@@ -10,6 +10,9 @@ if (!isset($_SESSION['user_id'])) {
 echo "Witaj, " . $_SESSION['username'] . "!";
 ?>
 
+<?php
+require 'user/page.php';
+?>
 <!--<button><a href="logout.php">Wyloguj</a></button>-->
 
 <?php

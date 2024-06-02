@@ -98,7 +98,7 @@ session_start();
                     } else {
                         echo
                         '<li>
-                            <a href="user_page.php">KONTO</a>
+                            <a href="user.php">KONTO</a>
                         </li>
                         <li>
                             <a href="logout.php">WYLOGUJ</a>
@@ -123,7 +123,7 @@ session_start();
             } else {
                 echo
                 '<li>
-                    <a href="user_page.php">KONTO</a>
+                    <a href="user.php">KONTO</a>
                 </li>
                 <li>
                     <a href="logout.php">WYLOGUJ</a>

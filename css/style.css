@@ -596,6 +596,7 @@ form.register-form .register-btn:hover, form.login-form .login-form-btn:hover {
 
 }
 
+
 @media only screen and (max-width: 570px) {
 	.search-bar-span-mobile {
 		width: 150px;

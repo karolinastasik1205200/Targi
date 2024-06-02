@@ -1,0 +1,118 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Ariel, sans-serif;
+    background-color: #FFFFFF;
+}
+
+#calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.calendar-header {
+    text-align: center;
+    }
+
+    .calendar-table {
+        width: 80%;
+        max-width: 1600px;
+        border-collapse: collapse;
+        border-color: #66B8D9;
+        margin: 0 auto;
+        margin-top: 20px;
+        table-layout: fixed;
+    }
+    
+    .calendar-table td {
+        height: 70px; 
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #66B8D9;
+        padding: 10px;
+    }
+
+.calendar-table th, .calendar-table td {
+    border: 1px solid #66B8D9;
+    padding: 10px;
+    text-align: center;
+   
+}
+
+.calendar-table td a {
+    display: block;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.calendar-table tr:first-child {
+    background-color: #66B8D9;
+    color: #4A5559;
+}
+.calendar-table tr:not(:first-child) {
+    background-color: #FFFFFF;
+    color: #4A5559; }
+
+
+
+.calendar-table td.day {
+    cursor: pointer;
+}
+h1 {
+    font-size: 40px;
+    text-align: center; 
+    color: #4A5559;
+}
+#current-month-name {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px; 
+    color: #4A5559;
+
+}
+
+#prev-month-btn {
+    position: absolute;
+    top: 42%; 
+    transform: translateY(-50%);
+    background-color: #D9A266;
+    color: #4A5559;
+}
+
+#next-month-btn {
+    position: absolute;
+    top: 42%; 
+    transform: translateY(-50%);
+    background-color: #D9A266;
+    color: #4A5559;
+}
+
+@media (max-width: 600px) {
+    .calendar-table {
+        font-size: 12px;
+    } }
+
+    @media (min-width: 768px) {
+        #prev-month-btn {
+            left: 7%;
+        }
+    
+        #next-month-btn {
+            right: 7%;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        #prev-month-btn {
+            left: 1px;
+        }
+    
+        #next-month-btn {
+            right: 1px;
+        }
+    }

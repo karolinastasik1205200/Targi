@@ -142,15 +142,15 @@ body {
 }
 
 .menu-list li a {
-	text-decoration: none;
-	color: #4a5559;
-	font-weight: bold;
-	padding: 15px 10px;
-	margin: 0 10px;
-	background-color: lightblue;
-	border-radius: 10px;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-	transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: #4A5559;
+    font-weight: bold;
+    padding: 15px 10px;
+    margin: 0 10px;
+    background: #66B8D9;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.20);
+    transition: all .2s ease-in-out;
 }
 
 .menu-list li a:hover {
@@ -159,12 +159,13 @@ body {
 }
 
 .menu-logo-space {
-	height: 100%;
-	width: 600px;
-	background-color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    height: 100%;
+    width: 600px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .menu-logo {
@@ -193,7 +194,152 @@ body {
 	display: none;
 }
 
+
 /* SITE CONTENT */
+
+
+/* REGISTER SITE */
+
+.section-register-form, .login-form-box {
+    width: 50%;
+    margin: auto;
+}
+
+.section-register-form h1 {
+    text-transform: uppercase;
+    color: #4A5559;
+    font-weight: 900;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+    padding: 50px 0 40px 0;
+}
+
+.register-form, .login-form {
+    border-radius: 20px;
+    background: #6E8D99;
+    margin: auto;
+    padding: 20px 0;
+}
+
+form.register-form div, form.login-form div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    margin: auto;
+}
+
+form.register-form div label, form.register-form div input, form.login-form div label, form.login-form div input {
+    padding: 10px 0;
+    color: #4A5559;
+}
+
+form.register-form div label, form.login-form div label {
+    font-weight: 600;
+    font-size: 20px;
+    text-shadow: 1px 1px rgba(0,0,0,.20);
+}
+
+form.register-form div input, form.login-form div input {
+    border-radius: 20px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+form.register-form .register-btn, form.login-form .login-form-btn {
+    width: fit-content;
+    font-weight: 600;
+    font-size: 22px;
+    color: #4A5559;
+    background: #66B8D9;
+    border: none;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.20);
+    transition: all 0.2s;
+    padding: 12px 30px;
+    margin: auto;
+}
+
+form.register-form .register-btn:hover, form.login-form .login-form-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px rgba(0,0,0,.20);
+    transition: all 0.2s;
+}
+
+#jsValidUser, #jsValidEmail, #jsValidPass, #jsValidConPass, #jsValidUserLogin, #jsValidPassLogin {
+    color: #D9A266;
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: 1px 1px rgba(0,0,0,.20);
+    padding: 10px 15px;
+}
+
+/* REGISTER FORM ANSWER PAGE */
+
+.register-form-answer {
+    color: #D9A266;
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: 1px 1px rgba(0,0,0,.20);
+    padding: 20px 15px;
+    min-height: 300px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-form-answer ul li p {
+    margin: 30px 20px;
+}
+
+.regInfo {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+/* LOGIN FORM DIFFERENCES */
+.login-form-container-show {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.login-background {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.login-form-box {
+	width: 400px;
+	z-index: 10;
+}
+
+.login-hidden {
+	position: absolute;
+	top: -400px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+
+.body-scroll-hide {
+	overflow: hidden;
+}
 
 .siteContent {
 	min-height: 800px;
@@ -201,13 +347,16 @@ body {
 	background: #fff;
 }
 
+
 /* FOOTER */
+
 .footer {
 	min-height: 600px;
 	background: #3b5998;
 	width: 100%;
 	position: relative;
 }
+
 #background {
 	background-image: url('../footer/photo1.png');
 	background-repeat: no-repeat;
@@ -219,9 +368,6 @@ body {
 	height: 360px;
 	margin-top: 0;
 }
-/*#background > * {*/
-/*	filter: brightness(80%);*/
-/*}*/
 
 .footer-backcolor {
 	width: 100%;
@@ -234,11 +380,12 @@ body {
 	font-weight: bold;
 	text-decoration: underline;
 }
+
 .footer-columns {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-}
+
 
 .column {
 	flex-basis: 30%;
@@ -393,6 +540,7 @@ body {
 	.body-scroll-hide {
 		overflow: hidden;
 	}
+
 }
 
 @media only screen and (max-width: 570px) {
@@ -410,5 +558,22 @@ body {
 
 	.search-icon {
 		right: 2px;
+	}
+
+	.mobile-login-form {
+		width: 100%;
+		height: 60vh;
+		padding: 100px 0;
+	}
+
+	.log-reg-btns {
+		display: none;
+	}
+
+}
+
+@media only screen and (max-height: 660px) {
+	.menu-list-mobile-active ul li a {
+		font-size: 30px;
 	}
 }

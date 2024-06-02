@@ -32,9 +32,9 @@ session_start();
     <div class="menu-content">
         <div>
             <span>
-                <a href="#"><i class="social-icons facebook-icon fa fa-facebook"></i></a>
-                <a href="#"><i class="social-icons youtube-icon fa fa-youtube"></i></a>
-                <a href="#"><i class="social-icons instagram-icon fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="social-icons facebook-icon fa fa-facebook"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="social-icons youtube-icon fa fa-youtube"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="social-icons instagram-icon fa fa-instagram"></i></a>
             </span>
             <span class="search-bar-span">
                 <input type="text" placeholder="Wyszukaj wydarzenie... " name="search" class="search-bar">
@@ -43,16 +43,16 @@ session_start();
         </div>
         <ul class="menu-list">
             <li>
-                <a href="index.php?id=1">STRONA GŁÓWNA</a>
+                <a href="index.php">STRONA GŁÓWNA</a>
             </li>
             <li>
-                <a href="index.php?id=2">WYDARZENIA</a>
+                <a href="Wydarzenia/ListaWydarzen.html">WYDARZENIA</a>
             </li>
             <li>
-                <a href="index.php?id=3">KALENDARZ</a>
+                <a href="Wydarzenia/kalendarz.html">KALENDARZ</a>
             </li>
             <li>
-                <a href="index.php?id=3">KONTAKT</a>
+                <a href="contact.php">KONTAKT</a>
             </li>
         </ul>
     </div>

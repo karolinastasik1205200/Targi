@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
         echo "Logowanie zakończone sukcesem!";
-        header("Location: user.php");
+        header("Location: user_page.php");
         exit();
     } else {
         echo "Nieprawidłowa nazwa użytkownika lub hasło.";

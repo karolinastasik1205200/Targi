@@ -11,7 +11,7 @@ echo "Witaj, " . $_SESSION['username'] . "!";
 ?>
 
 <?php
-require 'user/page.php';
+require 'user/user.php';
 ?>
 <!--<button><a href="logout.php">Wyloguj</a></button>-->
 

@@ -354,6 +354,20 @@ form.register-form .register-btn:hover, form.login-form .login-form-btn:hover {
     font-size: 18px;
 }
 
+/* USER-PAGE */
+
+.user-page-section {
+	width: 100%;
+}
+
+.user-page-container {
+	width: 1260px;
+	margin: 50px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
 /* LOGIN FORM DIFFERENCES */
 .login-form-container-show {
 	height: 100vh;

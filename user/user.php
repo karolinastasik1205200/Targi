@@ -1,7 +1,10 @@
 
-<section>
+<section class="user-page-section">
+
     <h1>Konto użytkownika</h1>
-    <div class="container">
+
+    <div class="user-page-container">
+
         <div class="column">
             <h2>Twoje rezerwacje:</h2>
             <ul id="rezerwacje-lista"></ul>
@@ -48,18 +51,19 @@
             </form>
         </div>
 
-        <div>
+        <div class="user-avatar">
             <div>
-                <img>
-                <div>
-<!--                    dodawanie zdjecia-->
-                </div>
+                <?php include 'avatar.php';?>
             </div>
-            <form>
-                <div>
-                    <input type="text" value="" id="user-username">
-                </div>
+
+            <form action="user/upload_avatar.php" method="post" enctype="multipart/form-data">
+                <label for="avatar">Wybierz avatar:</label>
+                <input type="file" name="avatar" id="avatar" required>
+                <button type="submit">Zapisz avatar</button>
             </form>
+            <div>
+                <?php include 'user-name.php';?>
+            </div>
         </div>
 
     </div>

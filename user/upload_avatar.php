@@ -65,5 +65,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
     echo "Nie przesłano pliku.";
 }
 
-$db = null;
+//$db = null;
 ?>

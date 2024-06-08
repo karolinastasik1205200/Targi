@@ -15,4 +15,4 @@ $avatar = $user['avatar'] ? $user['avatar'] : 'src/user-placeholder.png'; // Pla
 
 <img src="<?php echo htmlspecialchars($avatar); ?>" alt="Avatar" style="width:100px; height:100px;">
 
-<?php $db = null; ?>
+<?php //$db = null; ?>

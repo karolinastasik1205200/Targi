@@ -358,6 +358,7 @@ form.register-form .register-btn:hover, form.login-form .login-form-btn:hover {
 
 .user-page-section {
 	width: 100%;
+	position: relative;
 }
 
 .user-page-container {
@@ -366,6 +367,30 @@ form.register-form .register-btn:hover, form.login-form .login-form-btn:hover {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+}
+
+table.user-information-table {
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+table.user-information-table td {
+	padding: 10px;
+	vertical-align: center;
+}
+table.user-information-table label {
+	display: block;
+	margin-bottom: 5px;
+}
+table.user-information-table input, table.user-information-table textarea {
+	width: 100%;
+	padding: 8px;
+	box-sizing: border-box;
+}
+table.user-information-table .form-actions {
+	text-align: center;
 }
 
 /* LOGIN FORM DIFFERENCES */

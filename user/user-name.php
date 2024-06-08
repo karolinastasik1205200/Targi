@@ -14,7 +14,7 @@ $username = $user['username'];
 
 
 
-<h4><?php echo $username; ?></h4>
+<h4><?php print_r($username); ?></h4>
 
 
-<?php $db = null; ?>
+<?php //$db = null; ?>

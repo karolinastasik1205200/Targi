@@ -8,13 +8,7 @@ xhttp.onreadystatechange = function() {
         
         const upcomingEvents = wydarzenia
             .filter(wydarzenie => new Date(wydarzenie.Data) > today)
-            .sort((a, b) => {
-                const dateA = new Date(a.date);
-                const dateB = new Date(b.date);
-                const diffA = Math.abs(dateA - today);
-                const diffB = Math.abs(dateB - today);
-                return diffA - diffB;
-            });
+            .sort((a, b) => new Date(a.Data) - new Date(b.Data));
         
         upcomingEvents.forEach((wydarzenie, index) => {
             if (index % 4 === 0) {

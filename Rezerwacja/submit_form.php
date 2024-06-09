@@ -48,11 +48,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'description' => $description,
         'selected_area' => $selected_area
     ));
-
-    if ($statement) {
-        echo "Rezerwacja została wysłana.";
-    } else {
-        echo "Wystąpił błąd podczas zapisywania danych.";
-    }
 }
 ?>

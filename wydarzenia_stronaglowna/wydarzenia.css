@@ -20,24 +20,24 @@ a {
 
 .upcoming-events-section {
     display: flex;
-    flex-direction: column; /* Umożliwia umieszczenie h2 nad wydarzeniami */
-    align-items: center; /* Wyśrodkowuje h2 poziomo */
-    gap: 16px; /* Odstęp między elementami */
+    flex-direction: column;
+    align-items: center; 
+    gap: 16px; 
 }
 
 .row {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: center; /* Wyśrodkowuje wiersze */
+    justify-content: center; 
 }
 
 .event {
     flex: 1;
-    max-width: calc(25% - 16px); /* Dostosuj szerokość i uwzględnij odstęp */
+    max-width: calc(25% - 16px);
     box-sizing: border-box;
-    text-align: center; /* Wycentrowanie tekstu */
-    padding: 16px; /* Opcjonalnie: wewnętrzne odstępy */
+    text-align: center;
+    padding: 16px; 
 }
 
 .event-image {
@@ -47,12 +47,12 @@ a {
 
 @media (max-width: 768px) {
     .event {
-        max-width: calc(50% - 16px); /* Dla mniejszych ekranów, dwa wydarzenia w rzędzie */
+        max-width: calc(50% - 16px); 
     }
 }
 
 @media (max-width: 480px) {
     .event {
-        max-width: 100%; /* Dla najmniejszych ekranów, jedno wydarzenie w rzędzie */
+        max-width: 100%; 
     }
 }

@@ -31,3 +31,20 @@ function toggleLoginForm() {
     }
     loginVisible = !loginVisible;
 }
+
+
+let resetPassVisible = true;
+function toggleResetPassForm() {
+    if (resetPassVisible) {
+        let element = document.getElementById('reset-password-container');
+        element.classList.add('login-form-container-show');
+        element.classList.remove('login-hidden');
+        document.body.classList.add('body-scroll-hide');
+    } else {
+        let element = document.getElementById('reset-password-container');
+        element.classList.remove('login-form-container-show');
+        element.classList.add('login-hidden');
+        document.body.classList.remove('body-scroll-hide');
+    }
+    resetPassVisible = !resetPassVisible;
+}

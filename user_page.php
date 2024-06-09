@@ -1,4 +1,6 @@
 <?php
+ob_start(); // Włącz buforowanie wyjścia
+
 require 'header.php';
 
 if (!isset($_SESSION['user_id'])) {
@@ -6,12 +8,9 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Kod strony chronionej tutaj
-echo "Witaj, " . $_SESSION['username'] . "!";
-?>
+require 'user/user.php';
 
-<!--<button><a href="logout.php">Wyloguj</a></button>-->
-
-<?php
 require 'footer.php';
+
+ob_end_flush(); // Opróżnij (i wyślij) bufor wyjścia
 ?>

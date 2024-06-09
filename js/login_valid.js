@@ -2,8 +2,8 @@
 function loginValidateForm() {
 
 
-    var username = document.forms["login-form"]["username"].value;
-    var errorUser = document.getElementById("jsValidUserLogin");
+    var email = document.forms["login-form"]["email"].value;
+    var errorUserEmail = document.getElementById("jsValidUserLogin");
 
     var password = document.forms["login-form"]["password"].value;
     var errorPass = document.getElementById("jsValidPassLogin");
@@ -12,14 +12,10 @@ function loginValidateForm() {
 
 
 
-    if (username === "") {
-        errors[0] = "Wpisz nazwę użytkownika!";
-    } else if (username.length < 5) {
-        errors[0] = "Podana nazwa użytkownika nie istnieje.";
-    } else if (username.length > 50 ) {
-        errors[0] = "Podana nazwa użytkownika nie istnieje.";
-    } else if (!isUserNameValid(username)) {
-        errors[0] = "Podana nazwa użytkownika nie istnieje.";
+    if (email === "") {
+        errors[1] = "Pole adresu e-mail jest wymagane i nie może być puste! Wpisz adres e-mail!";
+    } else if (!validateEmail(email)) {
+        errors[1] = "Niewłaściwy format adresu e-mail!";
     }
 
 
@@ -36,12 +32,12 @@ function loginValidateForm() {
 
     // Wyświetlenie błędów w odpowiednich miejscach na stronie
     if (errors.some(error => error !== "")) {
-        errorUser.innerHTML = errors[0];
+        errorUserEmail.innerHTML = errors[0];
         errorPass.innerHTML = errors[1];
         event.preventDefault(); // Zatrzymuje domyślne zachowanie przeglądarki
         return false;
     } else {
-        errorUser.innerHTML = "";
+        errorUserEmail.innerHTML = "";
         errorPass.innerHTML = "";
         document.getElementById("login-form").submit(); // Wysyła formularz po pomyślnym walidowaniu
         return true;
@@ -50,8 +46,8 @@ function loginValidateForm() {
 
 function loginValidateMobileForm() {
 
-    var username = document.forms["mobile-login-form"]["username"].value;
-    var errorUser = document.getElementById("jsValidUserLoginMobile");
+    var email = document.forms["mobile-login-form"]["email"].value;
+    var errorUserEmail = document.getElementById("jsValidUserLoginMobile");
 
     var password = document.forms["mobile-login-form"]["password"].value;
     var errorPass = document.getElementById("jsValidPassLoginMobile");
@@ -60,14 +56,10 @@ function loginValidateMobileForm() {
 
 
 
-    if (username === "") {
-        errors[0] = "Wpisz nazwę użytkownika!";
-    } else if (username.length < 5) {
-        errors[0] = "Podana nazwa użytkownika nie istnieje.";
-    } else if (username.length > 50 ) {
-        errors[0] = "Podana nazwa użytkownika nie istnieje.";
-    } else if (!isUserNameValid(username)) {
-        errors[0] = "Podana nazwa użytkownika nie istnieje.";
+    if (email === "") {
+        errors[1] = "Pole adresu e-mail jest wymagane i nie może być puste! Wpisz adres e-mail!";
+    } else if (!validateEmail(email)) {
+        errors[1] = "Niewłaściwy format adresu e-mail!";
     }
 
 
@@ -84,12 +76,12 @@ function loginValidateMobileForm() {
 
     // Wyświetlenie błędów w odpowiednich miejscach na stronie
     if (errors.some(error => error !== "")) {
-        errorUser.innerHTML = errors[0];
+        errorUserEmail.innerHTML = errors[0];
         errorPass.innerHTML = errors[1];
         event.preventDefault(); // Zatrzymuje domyślne zachowanie przeglądarki
         return false;
     } else {
-        errorUser.innerHTML = "";
+        errorUserEmail.innerHTML = "";
         errorPass.innerHTML = "";
         document.getElementById("login-form").submit(); // Wysyła formularz po pomyślnym walidowaniu
         return true;
@@ -97,10 +89,9 @@ function loginValidateMobileForm() {
 }
 
 
-function isUserNameValid(username) {
-    var res = /^[a-zA-Z0-9][a-zA-Z0-9\s]*[a-zA-Z0-9]$/.exec(username);
-    var valid = !!res;
-    return valid;
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 
 function validatePass(password) {

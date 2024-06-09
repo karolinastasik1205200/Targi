@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start();?>
 <!doctype html>
 <html lang="pl">
 <head>
@@ -24,7 +22,7 @@ session_start();
 
 <!-- MENU -->
 <section class="menu-section">
-
+    <?php include 'user/user_reset_password.php';?>
     <div class="menu-logo-space">
         <a href="index.php"><img class="menu-logo" src="/src/Event%20Arena.png" alt="Logo"></a>
     </div>
@@ -32,9 +30,9 @@ session_start();
     <div class="menu-content">
         <div>
             <span>
-                <a href="#"><i class="social-icons facebook-icon fa fa-facebook"></i></a>
-                <a href="#"><i class="social-icons youtube-icon fa fa-youtube"></i></a>
-                <a href="#"><i class="social-icons instagram-icon fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="social-icons facebook-icon fa fa-facebook"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="social-icons youtube-icon fa fa-youtube"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="social-icons instagram-icon fa fa-instagram"></i></a>
             </span>
             <span class="search-bar-span">
                 <input type="text" placeholder="Wyszukaj wydarzenie... " name="search" class="search-bar">
@@ -43,16 +41,16 @@ session_start();
         </div>
         <ul class="menu-list">
             <li>
-                <a href="index.php?id=1">STRONA GŁÓWNA</a>
+                <a href="index.php">STRONA GŁÓWNA</a>
             </li>
             <li>
-                <a href="index.php?id=2">WYDARZENIA</a>
+                <a href="Wydarzenia/ListaWydarzen.html">WYDARZENIA</a>
             </li>
             <li>
-                <a href="index.php?id=3">KALENDARZ</a>
+                <a href="Wydarzenia/kalendarz.html">KALENDARZ</a>
             </li>
             <li>
-                <a href="index.php?id=3">KONTAKT</a>
+                <a href="contact.php">KONTAKT</a>
             </li>
         </ul>
     </div>
@@ -86,50 +84,44 @@ session_start();
                     </li>
                 </ul>
                 <ul class="log-reg-btns-mobile">
-                    <?php
-                    if (!isset($_SESSION['user_id'])) {
-                        echo
-                        '<li>
-                            <a href="mobile_login_form.php">ZALOGUJ</a>
-                        </li>
-                        <li>
-                            <a href="register_page.php">ZAREJESTRUJ</a>
-                        </li>';
-                    } else {
-                        echo
-                        '<li>
-                            <a href="user_page.php">KONTO</a>
-                        </li>
-                        <li>
-                            <a href="logout.php">WYLOGUJ</a>
-                        </li>';
-                    }
-                    ?>
+                    <?php if (!isset($_SESSION['user_id'])):?>
+                        <li><a href="mobile_login_form.php">ZALOGUJ</a></li>
+                        <li><a href="register_page.php">ZAREJESTRUJ</a></li>
+                    <?php else:?>
+                        <li><a href="user_page.php">KONTO</a></li>
+                        <li><a href="logout.php">WYLOGUJ</a></li>
+                    <?php endif;?>
                 </ul>
             </div>
         </div>
     </div>
     <div class="menu-list log-reg-btns">
         <ul>
-            <?php
-            if (!isset($_SESSION['user_id'])) {
-                echo
-                '<li>
-                    <a href="#" onclick="toggleLoginForm()">ZALOGUJ</a>
-                </li>
-                <li>
-                    <a href="register_page.php">ZAREJESTRUJ</a>
-                </li>';
-            } else {
-                echo
-                '<li>
-                    <a href="user_page.php">KONTO</a>
-                </li>
-                <li>
-                    <a href="logout.php">WYLOGUJ</a>
-                </li>';
-            }
-            ?>
+
+<!--            if (!isset($_SESSION['user_id'])) {-->
+<!--                echo-->
+<!--                '<li>-->
+<!--                    <a href="#" onclick="toggleLoginForm()">ZALOGUJ</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href="register_page.php">ZAREJESTRUJ</a>-->
+<!--                </li>';-->
+<!--            } else {-->
+<!--                echo-->
+<!--                '<li>-->
+<!--                    <a href="user_page.php">KONTO</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href="logout.php">WYLOGUJ</a>-->
+<!--                </li>';-->
+<!--            }-->
+            <?php if (!isset($_SESSION['user_id'])): ?>
+                <li><a href="#" onclick="toggleLoginForm()">ZALOGUJ</a></li>
+                <li><a href="register_page.php">ZAREJESTRUJ</a></li>
+            <?php else: ?>
+                <li><a href="user_page.php">KONTO</a></li>
+                <li><a href="logout.php">WYLOGUJ</a></li>
+            <?php endif; ?>
         </ul>
     </div>
     <div id="login-form-container" class="login-hidden">
@@ -137,8 +129,8 @@ session_start();
         <div class="login-form-box">
             <form id="login-form" action="login.php" method="post" class="login-form">
                 <div>
-                    <label for="username">Nazwa użytkownika:</label>
-                    <input type="text" name="username" id="username" required>
+                    <label for="email">Podaj adres e-mail:</label>
+                    <input type="email" name="email" id="email" required>
                     <span id="jsValidUserLogin"></span>
                 </div>
 

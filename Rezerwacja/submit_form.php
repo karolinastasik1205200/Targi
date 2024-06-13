@@ -1,8 +1,13 @@
 <?php
 require_once '../db_connect.php';
-
+session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   
+
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: index.php');
+        exit;
+    }
+
     $name = $_POST['name'];
     $email = $_POST['email'];
     $telephone = $_POST['telephone'];
@@ -11,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'];
     $selected_area = $_POST['selected_area'];
     $id_wydarzenia = $_POST['id_wydarzenia'];
-
+    $userId = $_SESSION['user_id'];
     
     $equipment = [];
 
@@ -31,15 +36,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $equipment_string = implode(', ', $equipment);
 
-    
+
 
    
-    $query = "INSERT INTO rezerwacje_niepotwierdzone (Wlasciciel, ID_Wydarzenia, Email, Telefon, Blaty, Krzesla, Wyposazenie, Opis, Miejsce) 
-              VALUES (:name, :id_wydarzenia, :email, :telephone, :blaty, :krzesla, :equipment, :description, :selected_area)";
+    $query = "INSERT INTO rezerwacje_niepotwierdzone (Wlasciciel, ID_Wydarzenia, user_id, Email, Telefon, Blaty, Krzesla, Wyposazenie, Opis, Miejsce) 
+              VALUES (:name, :id_wydarzenia, :user_id, :email, :telephone, :blaty, :krzesla, :equipment, :description, :selected_area)";
     $statement = $db->prepare($query);
     $statement->execute(array(
         'name' => $name,
         'id_wydarzenia' => $id_wydarzenia,
+        'user_id' => $userId,
         'email' => $email,
         'telephone' => $telephone,
         'blaty' => $blaty,
@@ -48,11 +54,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'description' => $description,
         'selected_area' => $selected_area
     ));
-
-    if ($statement) {
-        echo "Rezerwacja została wysłana.";
-    } else {
-        echo "Wystąpił błąd podczas zapisywania danych.";
-    }
 }
 ?>

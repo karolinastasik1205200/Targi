@@ -8,7 +8,7 @@ body, html {
     outline: 50px solid #66B8D9;
 }
 
-.occupied-area {
+.occupied-area, .preoccupied-area {
     pointer-events: none;
     outline: 50px solid #D9A266;
 }

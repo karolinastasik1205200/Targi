@@ -6,41 +6,61 @@ window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
-    
+
+    function markReservedAreas(reservedAreas, isConfirmed) {
+        areas.forEach(area => {
+            const title = area.getAttribute('title');
+            const isReserved = reservedAreas.some(item => item.Miejsce === title);
+            if (!isReserved) return;
+
+            if (isConfirmed) {
+                area.classList.add('occupied-area');
+                area.title = "To miejsce jest już zarezerwowane.";
+                return;
+            }
+
+            area.classList.add('preoccupied-area');
+            area.title = "To miejsce jest już wstępnie zarezerwowane.";
+        });
+    }
+
     fetch(`script2.php?id=${id}`) 
         .then(response => response.json())
         .then(data => {
-            
-            data.forEach(item => {
-                const area = document.querySelector(`area[title="${item.Miejsce}"]`);
-                if (area) {
-                    area.classList.add('occupied-area');
-                    area.title = "To miejsce jest już zarezerwowane.";
-                }
-            });
+            markReservedAreas(data, true); 
         })
         .catch(error => {
-            console.error('Error fetching occupied areas:', error);
+            console.error('Błąd pobierania rezerwacji potwierdzonych:', error);
         });
 
-    areas.forEach(area => {
-        area.addEventListener('click', (event) => {
-            event.preventDefault();  
-            if (!event.target.classList.contains('occupied-area')) {
-                const title = event.target.title;
-                info.textContent = `Wybrane miejsce: ${title}.`;
+    fetch(`script3.php?id=${id}`) 
+        .then(response => response.json())
+        .then(data => {
+            markReservedAreas(data, false); 
+        })
+        .catch(error => {
+            console.error('Błąd pobierania rezerwacji niepotwierdzonych:', error);
+        });
 
-                
-                areas.forEach(a => a.classList.remove('selected-area'));
-
-                
+        areas.forEach(area => {
+            area.addEventListener('click', (event) => {
+                event.preventDefault();
+                const isOccupied = event.target.classList.contains('occupied-area');
+                const isPreoccupied = event.target.classList.contains('preoccupied-area');
+                if (isOccupied === true) {
+                    info.textContent = "To miejsce jest już zarezerwowane.";
+                    selectedAreaInput.value = "reserved";
+                    return;
+                }
+                if (isPreoccupied === true) {
+                    info.textContent = "To miejsce jest już wstępnie zarezerwowane.";
+                    selectedAreaInput.value="reserved";
+                    return;
+                }
+                selectedAreaInput.value = event.target.title;
+                info.textContent = `Wybrane miejsce: ${event.target.title}.`;
                 event.target.classList.add('selected-area');
-
-                
-                selectedAreaInput.value = title;
-            } else {
-                info.textContent = "To miejsce jest już zarezerwowane.";
-            }
+            });
         });
-    });
+
 };

@@ -9,10 +9,11 @@
         <div class="column">
             <h2>Twoje rezerwacje:</h2>
             <ul id="rezerwacje-lista"></ul>
-            <script src="admin.js"></script>
+            <script src="user/user_reservation.js"></script>
         </div>
 
         <?php include 'profile.php';?>
+
         <button onclick="toggleResetPassForm()">Zmień hasło</button>
 
 

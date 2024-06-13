@@ -48,3 +48,22 @@ function toggleResetPassForm() {
     }
     resetPassVisible = !resetPassVisible;
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var targetElement = document.querySelector('.menu-section'); // Znajdź element menu
+    var scrollAmount = 120; // Ilość pikseli, po której dodajemy klasę
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY >= scrollAmount) {
+            targetElement.classList.add('show');
+        } else {
+            targetElement.classList.remove('show');
+        }
+    });
+});
+
+
+
+

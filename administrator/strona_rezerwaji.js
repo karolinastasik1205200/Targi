@@ -43,23 +43,3 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", "strona_rezerwacji.php?id=" + id_rezerwacji, true);
 xhttp.send();
-
-document.getElementById("akceptacja").addEventListener("click", () => {
-    sendRequest("buttons.php", { action: "accept", id: id_rezerwacji }, (response) => {
-        if (response.success) {
-            alert("Rezerwacja została zaakceptowana.");
-        } else {
-            alert("Wystąpił błąd: " + response.error);
-        }
-    });
-});
-
-document.getElementById("odrzucenie").addEventListener("click", () => {
-    sendRequest("buttons.php", { action: "reject", id: id_rezerwacji }, (response) => {
-        if (response.success) {
-            alert("Rezerwacja została odrzucona.");
-        } else {
-            alert("Wystąpił błąd: " + response.error);
-        }
-    });
-});

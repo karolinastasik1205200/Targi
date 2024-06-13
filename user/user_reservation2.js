@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const rezerwacjeLista = document.getElementById("rezerwacje-lista");
+    const rezerwacjeLista = document.getElementById("rezerwacje-niepotwierdzone-lista");
 
-  
+    
     const dodajRezerwacjeDoListy = (rezerwacja) => {
         const li = document.createElement("li");
         const nazwa = document.createElement("h3");
@@ -41,6 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     };
-    xhttp.open("GET", "user/user_reservation.php", true);
+    xhttp.open("GET", "user/user_reservation2.php", true);
     xhttp.send();
 });

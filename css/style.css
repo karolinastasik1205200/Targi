@@ -243,7 +243,7 @@ body {
 }
 .upcoming-events-section {
 	background-color: #f9f9f9;
-	padding: 2rem;
+	/*padding: 2rem;*/
 	text-align: center;
 	height: 200px;
 	width: 100%;
@@ -254,8 +254,9 @@ body {
 	padding: 2rem;
 	text-align: center;
 	height: 200px;
-	width: 100%;
-	margin-top: 2rem;
+	width: 1260px;
+	/*margin-top: 2rem;*/
+	margin: 2rem auto;
 }
 
 /* REGISTER SITE */

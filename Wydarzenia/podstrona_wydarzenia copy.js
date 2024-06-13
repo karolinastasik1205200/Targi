@@ -18,8 +18,6 @@ const displayEvent = (wydarzenie) => {
 
 };
 
-console.log("alert");
-
 const xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -29,12 +27,3 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", "podstrona_wydarzenia.php?id=" + id_wydarzenia, true);
 xhttp.send();
-
-var linkElement = document.getElementById('dynamicLink');
-linkElement.addEventListener(function() {
-    linkElement.onclick = function(event) {
-        event.preventDefault(); 
-        this.href = "../Rezerwacja/rezerwacja.html?id=" + 3;
-        window.location.href = this.href; 
-    };
-});

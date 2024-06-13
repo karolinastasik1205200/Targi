@@ -12,6 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/about_us.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Event-Arena - Targi projekt zaliczeniowy</title>
 
@@ -44,7 +45,7 @@
                 <a href="index.php">STRONA GŁÓWNA</a>
             </li>
             <li>
-                <a href="Wydarzenia/ListaWydarzen.html">WYDARZENIA</a>
+                <a href="event_page.php">WYDARZENIA</a>
             </li>
             <li>
                 <a href="Wydarzenia/kalendarz.html">KALENDARZ</a>

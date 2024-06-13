@@ -21,7 +21,7 @@
 <body>
 
 <!-- MENU -->
-<section class="menu-section">
+<section id="menu-section" class="menu-section">
     <?php include 'user/user_reset_password.php';?>
     <div class="menu-logo-space">
         <a href="index.php"><img class="menu-logo" src="/src/Event%20Arena.png" alt="Logo"></a>

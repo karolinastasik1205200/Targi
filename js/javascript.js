@@ -15,3 +15,55 @@ function toggleMenu() {
     }
     menuVisible = !menuVisible;
 }
+
+let loginVisible = true;
+function toggleLoginForm() {
+    if (loginVisible) {
+        let element = document.getElementById('login-form-container');
+        element.classList.add('login-form-container-show');
+        element.classList.remove('login-hidden');
+        document.body.classList.add('body-scroll-hide');
+    } else {
+        let element = document.getElementById('login-form-container');
+        element.classList.remove('login-form-container-show');
+        element.classList.add('login-hidden');
+        document.body.classList.remove('body-scroll-hide');
+    }
+    loginVisible = !loginVisible;
+}
+
+
+let resetPassVisible = true;
+function toggleResetPassForm() {
+    if (resetPassVisible) {
+        let element = document.getElementById('reset-password-container');
+        element.classList.add('login-form-container-show');
+        element.classList.remove('login-hidden');
+        document.body.classList.add('body-scroll-hide');
+    } else {
+        let element = document.getElementById('reset-password-container');
+        element.classList.remove('login-form-container-show');
+        element.classList.add('login-hidden');
+        document.body.classList.remove('body-scroll-hide');
+    }
+    resetPassVisible = !resetPassVisible;
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var targetElement = document.querySelector('.menu-section'); // Znajdź element menu
+    var scrollAmount = 120; // Ilość pikseli, po której dodajemy klasę
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY >= scrollAmount) {
+            targetElement.classList.add('show');
+        } else {
+            targetElement.classList.remove('show');
+        }
+    });
+});
+
+
+
+

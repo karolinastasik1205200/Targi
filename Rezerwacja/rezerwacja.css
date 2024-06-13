@@ -1,0 +1,82 @@
+body, html {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #4A5559; 
+}
+
+.selected-area {
+    outline: 50px solid #66B8D9;
+}
+
+.occupied-area, .preoccupied-area {
+    pointer-events: none;
+    outline: 50px solid #D9A266;
+}
+
+input[type="submit"] {
+    float: right;
+    margin-left: 10px;
+    font-family: Arial, sans-serif;
+    color: #4A5559;
+    font-size: 20px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    background-color: #66B8D9;
+    border: 2px solid #4A5559;
+    padding: 10px 20px;
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+
+ label {
+    font-size: 20px;
+ }
+#image {
+    height: 300px;
+    width: 300px;
+}
+
+p {
+    color:#4A5559;
+    font-size: 20px;
+}
+
+.container {
+    display: flex; 
+}
+
+.column {
+    flex-grow: 1; 
+    margin: 0 10px; 
+}
+
+@media (max-width: 768px) { 
+    .container {
+        flex-direction: column; 
+        align-items: center;
+    }
+    h1 {
+        text-align: center;
+    }
+
+    #duration {
+        text-align: center;
+    }    
+
+    #date {
+        text-align: center;
+    }
+    
+    input[type="submit"] {
+        align-items: center;
+        font-size: 14px; 
+    }
+    
+     label {
+        font-size: 14px;
+     }
+    
+    p {
+        font-size: 14px;
+    }
+}

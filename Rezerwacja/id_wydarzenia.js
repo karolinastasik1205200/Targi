@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.getElementById('id_wydarzenia').value = id_wydarzenia;
     
+    
     document.getElementById('myForm').addEventListener('submit', function(event) {
         event.preventDefault(); 
+        console.log(document.getElementById('selected-area'))
+        if(document.getElementById('selected-area').value === "reserved") {
+            alert("Wybierz niezarezerwowane miejsce.");
+            return; }
         var formData = new FormData(this);
         
         fetch('submit_form.php', {
@@ -17,7 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
         })
         .catch(error => {
-            console.error('Błąd:', error);
+            alert('Błąd:' + error);
         });
-    });
+
+        alert("Rezerwacja została wysłana.");
+    }
+    );
 });

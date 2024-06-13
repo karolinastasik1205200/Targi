@@ -6,4 +6,3 @@ return [
     'password' => 'WY7GTvmKCQuC89+HHTOKPE[v_5(nSF',
     'database' => 'm1043_targi'
 ];
-

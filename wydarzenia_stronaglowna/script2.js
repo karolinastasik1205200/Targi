@@ -1,16 +1,20 @@
 const today = new Date();
-const ListaWydarzen = document.getElementById("event-list");
+const ListaWydarzen = document.getElementById("upcoming_events");
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var wydarzenia = JSON.parse(this.responseText);
+
         
         const upcomingEvents = wydarzenia
-            .filter(wydarzenie => new Date(wydarzenie.Data) > today)
-            .sort((a, b) => new Date(a.Data) - new Date(b.Data));
+            .filter(wydarzenie => new Date(wydarzenie.Data) > today) 
+            .sort((a, b) => new Date(a.Data) - new Date(b.Data)) 
         
-        upcomingEvents.forEach((wydarzenie, index) => {
+        
+        const closestEvents = upcomingEvents.slice(0, 4);
+
+        closestEvents.forEach((wydarzenie, index) => {
             if (index % 4 === 0) {
                 const row = document.createElement("div");
                 row.classList.add("row");
@@ -18,10 +22,10 @@ xhttp.onreadystatechange = function() {
             }
         
             const link = document.createElement("a");
-            link.href = "podstrona_wydarzenia.html?id=" + wydarzenie.id;
+            link.href = "../wydarzenia/podstrona_wydarzenia.html?id=" + wydarzenie.id;
             link.classList.add("event");
         
-            const title = document.createElement("h2");
+            const title = document.createElement("h3");
             title.textContent = wydarzenie.Nazwa;
             link.appendChild(title);
         
@@ -46,5 +50,5 @@ xhttp.onreadystatechange = function() {
         });
     }
 };
-xhttp.open("GET", "script.php", true);
+xhttp.open("GET", "../wydarzenia/script.php", true);
 xhttp.send();

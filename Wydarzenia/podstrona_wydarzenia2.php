@@ -1,4 +1,4 @@
-
+<?php require 'header.php'?>
 <link rel="stylesheet" type="text/css" href="podstrona_wydarzenia.css"/>
 <section class="podstrona_wydarzenia-section">
 
@@ -26,3 +26,4 @@
   
   </section>
 
+<?php require 'footer.php'?>

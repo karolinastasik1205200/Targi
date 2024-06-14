@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konto administratora</title>
-    <link rel="stylesheet" href="admin.css">
-</head>
-<body>
+<?php require 'header.php';
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.php");
+    exit();
+}
+?>
+<link rel="stylesheet" href="admin.css">
+
+
     <h1>Konto administratora</h1>
     <div class="container">
         <div class="column">
@@ -36,5 +36,4 @@
             </form>
         </div>
     </div>
-</body>
-</html>
+<?php require 'footer.php';?>

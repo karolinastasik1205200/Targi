@@ -62,7 +62,7 @@ async function generateCalendar(year, month) {
                     eventsForDay.forEach(event => {
                         const eventItem = document.createElement('li');
                         const eventLink = document.createElement('a');
-                        eventLink.href = "podstrona_wydarzenia.html?id=" + event.id;
+                        eventLink.href = "podstrona_wydarzenia2.php?id=" + event.id;
                         eventLink.innerHTML = event.Nazwa;
                         eventItem.appendChild(eventLink);
                         eventList.appendChild(eventItem);

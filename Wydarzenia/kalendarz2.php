@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalendarz</title>
-    <link rel="stylesheet" href="kalendarz.css">
-</head>
-<body>
+<?php require 'header.php';?>
+<link rel="stylesheet" href="kalendarz.css">
+
     <div><h1>Kalendarz</h1></div>
     <div id="calendar-container">
         <h2 id="current-month-name"></h2>
@@ -15,5 +9,4 @@
         <div id="calendar"></div>
     </div>
     <script src="kalendarz.js"></script>
-</body>
-</html>
+<?php require 'footer.php';?>

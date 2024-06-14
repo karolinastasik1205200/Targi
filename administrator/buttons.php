@@ -18,22 +18,24 @@ try {
     $id = isset($postData['id']) ? intval($postData['id']) : 0;
 
     if ($action === 'accept') {
-        
-        $sql = "INSERT INTO rezerwacje_potwierdzone SELECT * FROM rezerwacje_niepotwierdzone WHERE id = :id";
+        $db->beginTransaction();
+
+        $sql = "INSERT INTO rezerwacje_potwierdzone SELECT * FROM rezerwacje_niepotwierdzone WHERE ID = :id";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
 
-        $sql = "DELETE FROM rezerwacje_niepotwierdzone WHERE id = :id";
+        $sql = "DELETE FROM rezerwacje_niepotwierdzone WHERE ID = :id";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
+
+        $db->commit();
 
         echo json_encode(['success' => true]);
 
     } elseif ($action === 'reject') {
-        
-        $sql = "DELETE FROM rezerwacje_niepotwierdzone WHERE id = :id";
+        $sql = "DELETE FROM rezerwacje_niepotwierdzone WHERE ID = :id";
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -41,7 +43,6 @@ try {
         echo json_encode(['success' => true]);
     }
 
-    
     $db = null;
 
 } catch (PDOException $error) {

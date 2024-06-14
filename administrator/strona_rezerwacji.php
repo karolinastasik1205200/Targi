@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 $config = require_once '../config.php';
 
 
@@ -9,7 +9,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 try {
-    
     $db = new PDO(
         "mysql:host={$config['host']};dbname={$config['database']};charset=utf8", 
         $config['user'], 
@@ -21,9 +20,9 @@ try {
     );
 
     $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+    error_log("ID rezerwacji: " . $id); // Dodaj logowanie ID
 
     if ($id > 0) {
-        
         $sql = "
             SELECT r.*, w.Nazwa
             FROM rezerwacje_niepotwierdzone r
@@ -35,7 +34,6 @@ try {
         $stmt->execute();
         $rezerwacja = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        
         header('Content-Type: application/json');
         if ($rezerwacja) {
             echo json_encode($rezerwacja);
@@ -43,7 +41,6 @@ try {
             echo json_encode(['error' => 'No record found']);
         }
     } else {
-        
         header('Content-Type: application/json');
         echo json_encode(['error' => 'Invalid ID']);
     }
@@ -53,5 +50,6 @@ try {
 } catch (PDOException $error) {
     header('Content-Type: application/json');
     echo json_encode(['error' => $error->getMessage()]);
+    error_log("PDOException: " . $error->getMessage()); // Dodaj logowanie błędów PDO
 }
 ?>

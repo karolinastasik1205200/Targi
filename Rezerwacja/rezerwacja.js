@@ -19,6 +19,6 @@ xhttp.onreadystatechange = function() {
         displayEvent(wydarzenie);
     }
 };
-xhttp.open("GET", "../wydarzenia/podstrona_wydarzenia.html?id=" + id_wydarzenia, true);
+xhttp.open("GET", "../wydarzenia/podstrona_wydarzenia2.php?id=" + id_wydarzenia, true);
 xhttp.send();
 

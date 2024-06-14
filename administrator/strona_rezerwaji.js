@@ -1,10 +1,22 @@
 const id_rezerwacji = window.location.search.split('=')[1];
+console.log("ID rezerwacji:", id_rezerwacji);
 
 const sendRequest = (url, data, callback) => {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            callback(JSON.parse(this.responseText));
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                try {
+                    const response = JSON.parse(this.responseText);
+                    callback(response);
+                } catch (error) {
+                    console.error("Error parsing response JSON:", error);
+                    console.error("Response text:", this.responseText);
+                }
+            } else {
+                console.error("Request failed with status:", this.status);
+                console.error("Response text:", this.responseText);
+            }
         }
     };
     xhttp.open("POST", url, true);
@@ -36,9 +48,19 @@ const displayEvent = (rezerwacja) => {
 
 const xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        const rezerwacja = JSON.parse(this.responseText);
-        displayEvent(rezerwacja); 
+    if (this.readyState == 4) {
+        if (this.status == 200) {
+            try {
+                const rezerwacja = JSON.parse(this.responseText);
+                displayEvent(rezerwacja);
+            } catch (error) {
+                console.error("Error parsing response JSON:", error);
+                console.error("Response text:", this.responseText);
+            }
+        } else {
+            console.error("Request failed with status:", this.status);
+            console.error("Response text:", this.responseText);
+        }
     }
 };
 xhttp.open("GET", "strona_rezerwacji.php?id=" + id_rezerwacji, true);

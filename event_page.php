@@ -3,10 +3,10 @@ ob_start();
 session_start();
 require 'header.php';
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: index.php");
-    exit();
-}
+//if (!isset($_SESSION['user_id'])) {
+//    header("Location: index.php");
+//    exit();
+//}
 
 require 'Wydarzenia/ListaWydarzen.html';
 

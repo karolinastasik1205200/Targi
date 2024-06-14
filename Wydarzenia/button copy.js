@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!isLoggedIn) {
                     alert('Zaloguj się, aby przejść na stronę rezerwacji.');
                 } else {
-                    const newHref = "../Rezerwacja/rezerwacja.html?id=" + (id_wydarzenia || data.isLoggedIn);
+                    const newHref = "../Rezerwacja/rezerwacja2.php?id=" + (id_wydarzenia || data.isLoggedIn);
                     linkElement.href = newHref;
                     window.location.href = newHref;
                 }

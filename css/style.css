@@ -243,7 +243,7 @@ body {
 }
 .upcoming-events-section {
 	background-color: #f9f9f9;
-	padding: 2rem;
+	/*padding: 2rem;*/
 	text-align: center;
 	height: 200px;
 	width: 100%;
@@ -254,8 +254,9 @@ body {
 	padding: 2rem;
 	text-align: center;
 	height: 200px;
-	width: 100%;
-	margin-top: 2rem;
+	width: 1260px;
+	/*margin-top: 2rem;*/
+	margin: 2rem auto;
 }
 
 /* REGISTER SITE */
@@ -445,6 +446,83 @@ table.user-information-table .form-actions {
 	min-height: 800px;
 	width: 100%;
 	background: #fff;
+}
+
+
+/* LISTA WYDARZEŃ */
+
+.event-page-section {
+
+}
+
+.event-page-section .event {
+	display: inline-block;
+	width: 22%;
+	margin: 1%;
+	vertical-align: top;
+	text-align: center;
+}
+
+.event-page-section .event-image {
+	width: 100%;
+	height: auto;
+}
+
+.event-page-section h1 {
+	text-align: center;
+	color: #4A5559;
+}
+
+.event-page-section a {
+	color: #4A5559;
+}
+
+.event-page-section p {
+	color: #4A5559;
+}
+
+/* PODSTRONA WYDARZENIA */
+
+.podstrona_wydarzenia-section {
+
+}
+
+.podstrona_wydarzenia-section h1 {
+	color: #4A5559;
+}
+
+.podstrona_wydarzenia-section #image {
+	height: 300px;
+	width: 300px;
+}
+
+.podstrona_wydarzenia-section p {
+	color:#4A5559;
+	font-size: 20px;
+}
+
+.podstrona_wydarzenia-section .container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.podstrona_wydarzenia-section .column {
+	flex: 1;
+	margin-bottom: 15px;
+}
+
+.podstrona_wydarzenia-section #dynamicLink {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #66B8D9;
+	color: #4A5559;
+	border-radius: 5px;
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	border: 2px solid #4A5559;
+	margin-left: 10px;
 }
 
 
@@ -642,6 +720,29 @@ table.user-information-table .form-actions {
 		overflow: hidden;
 	}
 
+}
+
+@media screen and (max-width: 768px) {
+	.event {
+		width: 100%;
+		margin: 0;
+	}
+
+	.podstrona_wydarzenia-section .container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.podstrona_wydarzenia-section h1 {
+		text-align: center;
+	}
+
+	.podstrona_wydarzenia-section #duration {
+		text-align: center;
+	}
+
+	.podstrona_wydarzenia-section #date {
+		text-align: center;
+	}
 }
 
 

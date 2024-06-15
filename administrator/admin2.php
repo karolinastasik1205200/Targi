@@ -6,8 +6,10 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 <link rel="stylesheet" href="admin.css">
 
-
-    <h1>Konto administratora</h1>
+<section class="admin-section">
+    <div class="admin-page-h1">
+        <h1>Konto administratora</h1>
+    </div>
     <div class="container">
         <div class="column">
             <h2>Rezerwacje niezatwierdzone</h2>
@@ -32,8 +34,9 @@ if (!isset($_SESSION['user_id'])) {
                 <label id="description" for="description">Opis wydarzenia:</label><br>
                 <textarea id="description" name="description" rows="8" cols="70"></textarea><br><br>
                 
-                <input type="submit" value="Wyślij">
+                <input id="admin-send" type="submit" value="Wyślij">
             </form>
         </div>
     </div>
+</section>
 <?php require 'footer.php';?>

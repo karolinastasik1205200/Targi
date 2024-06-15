@@ -2,7 +2,9 @@
 <link rel="stylesheet" type="text/css" href="podstrona_wydarzenia.css"/>
 <section class="podstrona_wydarzenia-section">
 
-    <h1 id="title"></h1>
+    <div class="wydarzenia-h1">
+        <h1 id="title"></h1>
+    </div>
     <div class="container">
         <div class="column">
             <img id="image" alt="Wydarzenie">
@@ -12,9 +14,6 @@
         </div>
         <div class="column">
             <p><span id="description"></span></p>
-        </div>
-        <div class="column">
-            
         </div>
     </div>
 

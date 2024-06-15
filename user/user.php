@@ -2,9 +2,9 @@
 <section class="user-page-section">
 <link rel="stylesheet" href="user/strona_rezerwacji copy.css">
 
-
-    <h1>Konto użytkownika</h1>
-
+    <div class="user-page-h1">
+        <h1>Konto użytkownika</h1>
+    </div>
     <div class="user-page-container">
 
         <div class="column">
@@ -26,6 +26,11 @@
         <div class="column">
         <div class="user-avatar">
             <div>
+                <h2>Twoja nazwa użytkownika: </h2>
+                <?php include 'user-name.php';?>
+            </div>
+
+            <div>
                 <?php include 'avatar.php';?>
             </div>
 
@@ -35,9 +40,7 @@
                 <br><br>
                 <button type="submit">Zapisz avatar</button>
             </form>
-            <div>
-                <?php include 'user-name.php';?>
-            </div>
+
         </div>
         </div>
 

@@ -14,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="css/about_us.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Event-Arena - Targi projekt zaliczeniowy</title>
 
     <script type="text/javascript" src="js/javascript.js"></script>
@@ -141,7 +144,7 @@
                     <span id="jsValidPassLogin"></span>
                 </div>
 
-                <div>
+                <div class="login-form-remember">
                     <input type="checkbox" name="rememberMe" id="rememberMe">
                     <label for="rememberMe">Zapamiętaj mnie</label>
                 </div>
@@ -149,8 +152,8 @@
                 <div>
                     <input type="submit" value="Zaloguj się" name="submit" class="login-form-btn" onclick="loginValidateForm()">
                 </div>
-                <div>
-                    <a href="forgot_password.html">Zapomniałeś hasła?</a>
+                <div class="login-form-forgot-register">
+                    <a href="forgot_password.php">Zapomniałeś hasła?</a>
                     <span>Nie posiadasz konta? <a href="register_page.php">Zarejestruj się</a></span>
                 </div>
             </form>

@@ -28,10 +28,12 @@
         <p>Jesteśmy wiodącą firmą z Poznania, specjalizującą się w organizacji targów i wydarzeń branżowych. Nasza misja to tworzenie niezapomnianych doświadczeń, które łączą ludzi, pomysły i technologie. Dzięki wieloletniemu doświadczeniu oraz zaangażowaniu, zapewniamy najwyższy standard usług, dbając o każdy detal – od koncepcji po realizację. Nasze targi to platforma do nawiązywania wartościowych relacji biznesowych i wymiany wiedzy. Zapraszamy do współpracy i wspólnego tworzenia wyjątkowych wydarzeń, które inspirują i napędzają rozwój.
         </p>
     </div>
-    
-    <div id="upcoming_events" class="upcoming-events-section">
-        <h2>Nadchodzące wydarzenia</h2>
-        <script src="wydarzenia_stronaglowna/script2.js"></script>
+
+    <div class="upcoming-events-box">
+        <div id="upcoming_events" class="upcoming-events-section">
+            <h2>Nadchodzące wydarzenia</h2>
+            <script src="wydarzenia_stronaglowna/script2.js"></script>
+        </div>
     </div>
 </section>
 

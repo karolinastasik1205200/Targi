@@ -13,6 +13,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $avatar = $user['avatar'] ? $user['avatar'] : 'src/user-placeholder.png'; // Placeholder jeśli nie ma avatara
 ?>
 
-<img src="<?php echo htmlspecialchars($avatar); ?>" alt="Avatar" style="width:100px; height:100px;">
+<img src="<?php echo htmlspecialchars($avatar); ?>" alt="Avatar" style="width:250px; height:250px; border-radius: 20px">
 
 <?php //$db = null; ?>

@@ -955,6 +955,11 @@ section.podstrona_wydarzenia-section .container {
 	color: #4A5559;
 }
 
+.rezerwacja-stoiska-section .container .column img {
+	border-radius: 20px;
+	margin: 20px auto;
+}
+
 .rezerwacja-stoiska-section .container .column input.rezerwacja-submit {
 	text-decoration: none;
 	color: #4A5559;
@@ -1068,6 +1073,25 @@ section.podstrona_wydarzenia-section .container {
 
 	.menu-logo-space {
 		width: fit-content;
+	}
+}
+
+@media only screen and (max-width: 1260px) {
+	.siteContent {
+		width: 768px;
+
+		.about-section {
+			width: 768px;
+		}
+
+		.upcoming-events-box {
+			width: 100%!important;
+
+			.upcoming-events-section {
+				width: 768px;
+			}
+		}
+
 	}
 }
 
@@ -1186,28 +1210,28 @@ section.podstrona_wydarzenia-section .container {
 
 }
 
-@media screen and (max-width: 768px) {
-	.event {
-		width: 100%;
-		margin: 0;
-	}
+/*@media screen and (max-width: 768px) {*/
+/*	.event {*/
+/*		width: 100%;*/
+/*		margin: 0;*/
+/*	}*/
 
-	.podstrona_wydarzenia-section .container {
-		flex-direction: column;
-		align-items: center;
-	}
-	.podstrona_wydarzenia-section h1 {
-		text-align: center;
-	}
+/*	.podstrona_wydarzenia-section .container {*/
+/*		flex-direction: column;*/
+/*		align-items: center;*/
+/*	}*/
+/*	.podstrona_wydarzenia-section h1 {*/
+/*		text-align: center;*/
+/*	}*/
 
-	.podstrona_wydarzenia-section #duration {
-		text-align: center;
-	}
+/*	.podstrona_wydarzenia-section #duration {*/
+/*		text-align: center;*/
+/*	}*/
 
-	.podstrona_wydarzenia-section #date {
-		text-align: center;
-	}
-}
+/*	.podstrona_wydarzenia-section #date {*/
+/*		text-align: center;*/
+/*	}*/
+/*}*/
 
 
 @media only screen and (max-width: 570px) {
@@ -1243,4 +1267,22 @@ section.podstrona_wydarzenia-section .container {
 	.menu-list-mobile-active ul li a {
 		font-size: 30px;
 	}
+}
+
+@media only screen and (max-width: 328px) {
+	.siteContent {
+		width: 100%;
+
+	.about-section {
+		width: 100%;
+	}
+
+	.upcoming-events-box {
+		width: 100%!important;
+
+		.upcoming-events-section {
+			width: 100%;
+		}
+	}
+
 }

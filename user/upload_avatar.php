@@ -67,3 +67,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['avatar'])) {
 
 //$db = null;
 ?>
+
+<a href="../user_page.php">Wróć na konto użytkownika</a>

@@ -75,3 +75,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
+<a href="/index.php"></a>

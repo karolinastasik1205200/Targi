@@ -20,7 +20,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 // Obsługa aktualizacji danych użytkownika
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Pobieranie danych z formularza
-    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+//    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
     $phone_number = filter_input(INPUT_POST, 'phone_number', FILTER_SANITIZE_STRING);
     $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
     $krs = filter_input(INPUT_POST, 'krs', FILTER_SANITIZE_STRING);
@@ -28,15 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $owner_name = filter_input(INPUT_POST, 'owner_name', FILTER_SANITIZE_STRING);
     $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
 
-    // Walidacja wymaganych pól
-    if ($email === false) {
-        die('Podaj poprawny adres e-mail.');
-    }
+//    // Walidacja wymaganych pól
+//    if ($email === false) {
+//        die('Podaj poprawny adres e-mail.');
+//    }
 
     // Aktualizacja danych w bazie
-    $update_sql = "UPDATE users SET email = :email, phone_number = :phone_number, address = :address, krs = :krs, nip = :nip, owner_name = :owner_name, description = :description WHERE id = :id";
+    $update_sql = "UPDATE users SET phone_number = :phone_number, address = :address, krs = :krs, nip = :nip, owner_name = :owner_name, description = :description WHERE id = :id";
     $update_stmt = $db->prepare($update_sql);
-    $update_stmt->bindParam(':email', $email, PDO::PARAM_STR);
+//    $update_stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $update_stmt->bindParam(':phone_number', $phone_number, PDO::PARAM_STR);
     $update_stmt->bindParam(':address', $address, PDO::PARAM_STR);
     $update_stmt->bindParam(':krs', $krs, PDO::PARAM_STR);

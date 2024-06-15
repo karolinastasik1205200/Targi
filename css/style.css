@@ -955,6 +955,11 @@ section.podstrona_wydarzenia-section .container {
 	color: #4A5559;
 }
 
+.rezerwacja-stoiska-section .container .column img {
+	border-radius: 20px;
+	margin: 20px auto;
+}
+
 .rezerwacja-stoiska-section .container .column input.rezerwacja-submit {
 	text-decoration: none;
 	color: #4A5559;

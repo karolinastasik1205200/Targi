@@ -44,3 +44,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "Hasło zostało zmienione.";
 }
 ?>
+
+<a href="../user_page.php">Wróć na konto użytkownika</a>

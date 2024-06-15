@@ -92,7 +92,7 @@
                 $mail->Port = 587;
 
                 // Recipients
-                $mail->setFrom('rejestracja@event-arena.org.pl', 'Mailer');
+                $mail->setFrom('rejestracja@event-arena.org.pl', 'Event-Arena');
                 $mail->addAddress($email, $username);
 
                 // Content

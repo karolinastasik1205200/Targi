@@ -1076,6 +1076,25 @@ section.podstrona_wydarzenia-section .container {
 	}
 }
 
+@media only screen and (max-width: 1260px) {
+	.siteContent {
+		width: 768px;
+
+		.about-section {
+			width: 768px;
+		}
+
+		.upcoming-events-box {
+			width: 100%!important;
+
+			.upcoming-events-section {
+				width: 768px;
+			}
+		}
+
+	}
+}
+
 @media only screen and (max-width: 960px) {
 	.menu-content {
 		position: absolute;
@@ -1191,28 +1210,28 @@ section.podstrona_wydarzenia-section .container {
 
 }
 
-@media screen and (max-width: 768px) {
-	.event {
-		width: 100%;
-		margin: 0;
-	}
+/*@media screen and (max-width: 768px) {*/
+/*	.event {*/
+/*		width: 100%;*/
+/*		margin: 0;*/
+/*	}*/
 
-	.podstrona_wydarzenia-section .container {
-		flex-direction: column;
-		align-items: center;
-	}
-	.podstrona_wydarzenia-section h1 {
-		text-align: center;
-	}
+/*	.podstrona_wydarzenia-section .container {*/
+/*		flex-direction: column;*/
+/*		align-items: center;*/
+/*	}*/
+/*	.podstrona_wydarzenia-section h1 {*/
+/*		text-align: center;*/
+/*	}*/
 
-	.podstrona_wydarzenia-section #duration {
-		text-align: center;
-	}
+/*	.podstrona_wydarzenia-section #duration {*/
+/*		text-align: center;*/
+/*	}*/
 
-	.podstrona_wydarzenia-section #date {
-		text-align: center;
-	}
-}
+/*	.podstrona_wydarzenia-section #date {*/
+/*		text-align: center;*/
+/*	}*/
+/*}*/
 
 
 @media only screen and (max-width: 570px) {
@@ -1248,4 +1267,22 @@ section.podstrona_wydarzenia-section .container {
 	.menu-list-mobile-active ul li a {
 		font-size: 30px;
 	}
+}
+
+@media only screen and (max-width: 328px) {
+	.siteContent {
+		width: 100%;
+
+	.about-section {
+		width: 100%;
+	}
+
+	.upcoming-events-box {
+		width: 100%!important;
+
+		.upcoming-events-section {
+			width: 100%;
+		}
+	}
+
 }

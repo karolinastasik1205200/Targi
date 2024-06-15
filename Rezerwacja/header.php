@@ -10,23 +10,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="css/about_us.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/about_us.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Event-Arena - Targi projekt zaliczeniowy</title>
 
-    <script type="text/javascript" src="js/javascript.js"></script>
-    <script type="text/javascript" src="js/login_valid.js"></script>
+    <script type="text/javascript" src="../js/javascript.js"></script>
+    <script type="text/javascript" src="../js/login_valid.js"></script>
 </head>
 <body>
 
 <!-- MENU -->
 <section id="menu-section" class="menu-section">
-    <?php include 'user/user_reset_password.php';?>
+    <?php include '../user/user_reset_password.php';?>
     <div class="menu-logo-space">
         <a href="index.php"><img class="menu-logo" src="/src/Event%20Arena.png" alt="Logo"></a>
     </div>
@@ -45,16 +42,16 @@
         </div>
         <ul class="menu-list">
             <li>
-                <a href="index.php">STRONA GŁÓWNA</a>
+                <a href="../index.php">STRONA GŁÓWNA</a>
             </li>
             <li>
-                <a href="event_page.php">WYDARZENIA</a>
+                <a href="../event_page.php">WYDARZENIA</a>
             </li>
             <li>
-                <a href="Wydarzenia/kalendarz2.php">KALENDARZ</a>
+                <a href="../Wydarzenia/kalendarz2.php">KALENDARZ</a>
             </li>
             <li>
-                <a href="contact.php">KONTAKT</a>
+                <a href="../contact.php">KONTAKT</a>
             </li>
         </ul>
     </div>
@@ -75,7 +72,7 @@
             <div id="mobile-menu" class="menu-list-mobile-hidden">
                 <ul>
                     <li>
-                        <a href="index.php?id=1">STRONA GŁÓWNA</a>
+                        <a href="../index.php?id=1">STRONA GŁÓWNA</a>
                     </li>
                     <li>
                         <a href="index.php?id=2">WYDARZENIA</a>
@@ -89,11 +86,11 @@
                 </ul>
                 <ul class="log-reg-btns-mobile">
                     <?php if (!isset($_SESSION['user_id'])):?>
-                        <li><a href="mobile_login_form.php">ZALOGUJ</a></li>
-                        <li><a href="register_page.php">ZAREJESTRUJ</a></li>
+                        <li><a href="../mobile_login_form.php">ZALOGUJ</a></li>
+                        <li><a href="../register_page.php">ZAREJESTRUJ</a></li>
                     <?php else:?>
-                        <li><a href="user_page.php">KONTO</a></li>
-                        <li><a href="logout.php">WYLOGUJ</a></li>
+                        <li><a href="../user_page.php">KONTO</a></li>
+                        <li><a href="../logout.php">WYLOGUJ</a></li>
                     <?php endif;?>
                 </ul>
             </div>
@@ -121,10 +118,10 @@
 <!--            }-->
             <?php if (!isset($_SESSION['user_id'])): ?>
                 <li><a href="#" onclick="toggleLoginForm()">ZALOGUJ</a></li>
-                <li><a href="register_page.php">ZAREJESTRUJ</a></li>
+                <li><a href="../register_page.php">ZAREJESTRUJ</a></li>
             <?php else: ?>
-                <li><a href="user_page.php">KONTO</a></li>
-                <li><a href="logout.php">WYLOGUJ</a></li>
+                <li><a href="../user_page.php">KONTO</a></li>
+                <li><a href="../logout.php">WYLOGUJ</a></li>
             <?php endif; ?>
         </ul>
     </div>
@@ -144,7 +141,7 @@
                     <span id="jsValidPassLogin"></span>
                 </div>
 
-                <div class="login-form-remember">
+                <div>
                     <input type="checkbox" name="rememberMe" id="rememberMe">
                     <label for="rememberMe">Zapamiętaj mnie</label>
                 </div>
@@ -152,9 +149,9 @@
                 <div>
                     <input type="submit" value="Zaloguj się" name="submit" class="login-form-btn" onclick="loginValidateForm()">
                 </div>
-                <div class="login-form-forgot-register">
-                    <a href="forgot_password.php">Zapomniałeś hasła?</a>
-                    <span>Nie posiadasz konta? <a href="register_page.php">Zarejestruj się</a></span>
+                <div>
+                    <a href="../forgot_password.php">Zapomniałeś hasła?</a>
+                    <span>Nie posiadasz konta? <a href="../register_page.php">Zarejestruj się</a></span>
                 </div>
             </form>
         </div>

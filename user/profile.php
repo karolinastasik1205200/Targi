@@ -52,7 +52,7 @@ ob_end_flush();
 ?>
 
 <div class="user-information-profile-container">
-    <h1>Twoje dane:</h1>
+    <h2>Twoje dane:</h2>
     <form action="" method="post" class="user-information-form">
         <table class="user-information-table">
             <tr>

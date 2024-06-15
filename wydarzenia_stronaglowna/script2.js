@@ -22,7 +22,7 @@ xhttp.onreadystatechange = function() {
             }
         
             const link = document.createElement("a");
-            link.href = "../wydarzenia/podstrona_wydarzenia.html?id=" + wydarzenie.id;
+            link.href = "/Wydarzenia/podstrona_wydarzenia2.php?id=" + wydarzenie.id;
             link.classList.add("event");
         
             const title = document.createElement("h3");
@@ -50,5 +50,5 @@ xhttp.onreadystatechange = function() {
         });
     }
 };
-xhttp.open("GET", "../wydarzenia/script.php", true);
+xhttp.open("GET", "../Wydarzenia/script.php", true);
 xhttp.send();

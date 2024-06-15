@@ -74,7 +74,8 @@ function validateEmail(email) {
 }
 
 function isUserNameValid(username) {
-    var res = /^[a-zA-Z0-9][a-zA-Z0-9\s]*[a-zA-Z0-9]$/.exec(username);
+    // Regex allows letters, digits, spaces, dots, and hyphens, and Polish characters
+    var res = /^[a-zA-Z0-9ĄĆĘŁŃÓŚŹŻąćęłńóśźż\s.-]+$/.exec(username);
     var valid = !!res;
     return valid;
 }

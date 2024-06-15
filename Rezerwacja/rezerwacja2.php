@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rezerwacja stoiska</title>
-    <link rel="stylesheet" href="rezerwacja.css">
-</head>
-<body>
-    <h1>Zarezerwuj stoisko!</h1>
+<?php require 'header.php';
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.php");
+    exit();
+}
+?>
+<link rel="stylesheet" href="rezerwacja.css">
+<section class="rezerwacja-stoiska-section">
+    <div class="rezerwacja-stoiska-h1">
+        <h1>Zarezerwuj stoisko!</h1>
+    </div>
     <div class="container">
         <div class="column">
             <p id="title"></p>
@@ -98,7 +99,7 @@
                 <script src="id_wydarzenia.js"></script>
                 <input type="hidden" id="id_wydarzenia" name="id_wydarzenia">
                 <script src="script.js"></script>
-                <input type="submit" value="Wyślij">
+                <input class="rezerwacja-submit" type="submit" value="Wyślij">
             </form>
         </div>
         </div>
@@ -106,5 +107,5 @@
     </div>
 
     <script src="rezerwacja.js"></script>
-</body>
-</html>
+</section>
+<?php require 'footer.php'; ?>

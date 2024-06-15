@@ -3,6 +3,8 @@ body, html {
     background-color: #FFFFFF;
 }
 
+
+
 h1 {
     color: #4A5559;
 }
@@ -34,10 +36,11 @@ p {
     background-color: #66B8D9; 
     color: #4A5559; 
     border-radius: 5px; 
-    font-family: Arial, sans-serif; 
+    /*font-family: Arial, sans-serif; */
     font-size: 20px; 
     font-weight: bold;
     border: 2px solid #4A5559; 
+    margin-left: 10px;
 }
 
 @media (max-width: 768px) { 

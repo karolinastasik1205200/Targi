@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="wydarzenia_stronaglowna/wydarzenia.css">
+
 <!- SLIDESHOW ->
 <div class="headerslide fade">
     <div class="slide s1">
@@ -23,28 +25,15 @@
 <section class="siteContent">
     <div class="about-section">
         <h2>O nas</h2>
-        <p>
-            Jesteśmy wiodącą firmą z Poznania, specjalizującą się w organizacji targów i wydarzeń branżowych. Nasza misja to tworzenie niezapomnianych doświadczeń, które łączą ludzi, pomysły i technologie. Dzięki wieloletniemu doświadczeniu oraz zaangażowaniu, zapewniamy najwyższy standard usług, dbając o każdy detal – od koncepcji po realizację. Nasze targi to platforma do nawiązywania wartościowych relacji biznesowych i wymiany wiedzy. Zapraszamy do współpracy i wspólnego tworzenia wyjątkowych wydarzeń, które inspirują i napędzają rozwój.
+        <p>Jesteśmy wiodącą firmą z Poznania, specjalizującą się w organizacji targów i wydarzeń branżowych. Nasza misja to tworzenie niezapomnianych doświadczeń, które łączą ludzi, pomysły i technologie. Dzięki wieloletniemu doświadczeniu oraz zaangażowaniu, zapewniamy najwyższy standard usług, dbając o każdy detal – od koncepcji po realizację. Nasze targi to platforma do nawiązywania wartościowych relacji biznesowych i wymiany wiedzy. Zapraszamy do współpracy i wspólnego tworzenia wyjątkowych wydarzeń, które inspirują i napędzają rozwój.
         </p>
     </div>
 
-    <div class="calendar-container">
-        <h2 class="section-title">Kalendarz wydarzeń</h2>
-        <div class="calendar">
-            <!-- kod kalendarza -->
-            <h1 style="font-size: 40px"><strong>Tu wyświetlany będzie kalendarz</strong></h1>
-            <p>Tymczasem, dostęp do kalendarza można uzyskać poprzez menu na górze strony.</p>
+    <div class="upcoming-events-box">
+        <div id="upcoming_events" class="upcoming-events-section">
+            <h2>Nadchodzące wydarzenia</h2>
+            <script src="wydarzenia_stronaglowna/script2.js"></script>
         </div>
     </div>
-
-    <div class="upcoming-events-section">
-        <h2>Nadchodzące wydarzenia</h2>
-        <h1 style="font-size: 40px"><strong>Tu wyświetlane będą najbliższe wydarzenia</strong></h1>
-        <p>Tymczasem, dostęp do wydarzeń można uzyskać poprzez menu na górze strony.</p>
-        <!-- kalendarz z nadchodzącymi wydarzeniami -->
-
-    </div>
 </section>
-<?php
-echo "<h1> Tu powstanie strona Event-Arena. Zapraszamy niebawem </h1>"; ?>
 

@@ -5,7 +5,7 @@ require_once 'db_connect.php';
 
 // Sprawdzenie, czy użytkownik jest zalogowany
 if (!isset($_SESSION['user_id'])) {
-    header('Location: index.php');
+    header('Location: /index.php');
     exit;
 }
 
@@ -52,7 +52,7 @@ ob_end_flush();
 ?>
 
 <div class="user-information-profile-container">
-    <h1>Twoje dane:</h1>
+    <h2>Twoje dane:</h2>
     <form action="" method="post" class="user-information-form">
         <table class="user-information-table">
             <tr>
@@ -84,7 +84,7 @@ ob_end_flush();
                 <td><textarea name="description" id="description" placeholder="Brak danych"><?php echo htmlspecialchars($user['description'] ?? ''); ?></textarea></td>
             </tr>
             <tr class="form-actions">
-                <td colspan="2"><button type="submit">Zaktualizuj</button></td>
+                <td colspan="2"><button type="submit">Zaktualizuj dane</button></td>
             </tr>
         </table>
     </form>

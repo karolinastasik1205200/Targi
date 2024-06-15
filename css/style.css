@@ -1,7 +1,8 @@
 body {
-	margin: 130px 0 0 0;
+	margin: 120px 0 0 0;
 	position: relative;
-	font-family: Arial, sans-serif;
+	/*font-family: Arial, sans-serif;*/
+	font-family: Lato, sans-serif!important;
 	
 }
 /* MENU SECTION */
@@ -13,11 +14,18 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	position: fixed;
-	top: 0;
+	position: absolute; /* Ustawiamy na stałe fixed */
+	top: -120px; /* Zaczyna się poza ekranem */
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	z-index: 9999;
+	transition: top 0.5s ease; /* Płynna animacja dla właściwości top */
 }
+
+.menu-section.show {
+	position: fixed;
+	top: 0; /* Przesuwa się na górę ekranu */
+}
+
 
 .menu-content {
 	height: 100%;
@@ -178,7 +186,7 @@ body {
 	overflow: hidden;
 	position: relative;
 	top: 0;
-	margin-top: -10px;
+	/*margin-top: -10px;*/
 }
 
 .slide {
@@ -203,7 +211,7 @@ body {
 	height: 10px;
 	width: 10px;
 	margin: 0 2px;
-	background-color: #bbb;
+	background-color: #6E8D99;
 	border-radius: 50%;
 	display: inline-block;
 	transition: background-color 0.6s ease;
@@ -211,7 +219,7 @@ body {
 }
 
 .active {
-	background-color: #717171;
+	background-color: #66B8D9;
 }
 
 .headoverlay {
@@ -225,6 +233,32 @@ body {
 	z-index: 1;
 }
 
+.about-section {
+	background-color: #fff;
+	/*padding: 2rem;*/
+	text-align: left;
+	width: 1260px;
+	/*margin-top: 2rem;*/
+	margin: 50px auto;
+}
+
+.about-section h2 {
+	font-size: 28px;
+	font-weight: 900;
+	color: #4A5559;
+	text-decoration: none;
+	padding: 10px 0;
+	text-transform: capitalize;
+}
+
+.about-section p {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 30px;
+	color: #4A5559;
+	padding: 40px 0 20px 0;
+}
+
 .calendar-container {
 	display: flex;
 	flex-direction: column;
@@ -234,22 +268,99 @@ body {
 	width: 100%;
 	padding: 2rem 0;
 }
+
+.upcoming-events-box {
+	background-color: #6E8D99;
+	width: 100%;
+	padding: 20px 0;
+	margin-bottom: 150px;
+}
+
 .upcoming-events-section {
-	background-color: #f9f9f9;
-	padding: 2rem;
-	text-align: center;
-	height: 200px;
-	width: 100%;
-	margin-top: 2rem;
+	/*padding: 2rem;*/
+	text-align: left;
+	height: auto;
+	width: 1260px;
+	/*margin-top: 2rem;*/
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 16px;
 }
-.about-section {
-	background-color: #fff;
-	padding: 2rem;
-	text-align: center;
-	height: 200px;
-	width: 100%;
-	margin-top: 2rem;
+
+.upcoming-events-section h2 {
+	font-size: 28px;
+	font-weight: 900;
+	color: #4A5559;
+	text-decoration: none;
+	padding: 10px 0;
+	text-transform: capitalize;
 }
+
+.upcoming-events-section row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	position: relative;
+}
+
+.upcoming-events-section .row a {
+	position: relative;
+	display: inline-block;
+	background: #D9A266;
+	width: 550px;
+	height: 260px;
+	margin: 20px 30px;
+	border-radius: 20px;
+	border-top: 5px;
+	border-right: 5px;
+	border-bottom: 5px;
+	border-style: solid;
+	border-color: #FFF;
+	box-sizing: border-box;
+}
+
+.upcoming-events-section .row a h3 {
+	display: inline-block;
+	position: absolute;
+	top: 40px;
+	right: 29px;
+	color: #4A5559;
+	font-weight: 800;
+	font-size: 22px;
+	width: 230px;
+	height: auto;
+	text-align: center;
+}
+
+.upcoming-events-section .row a img {
+	border-top: 5px;
+	border-left: 5px;
+	border-bottom: 5px;
+	border-style: solid;
+	border-color: #4A5559;
+	border-radius: 20px 0 0 20px;
+	position: absolute;
+	top: -5px;
+	left: 0;
+	box-sizing: content-box;
+}
+
+.upcoming-events-section .row a p {
+	display: inline-block;
+	position: absolute;
+	bottom: 60px;
+	right: 85px;
+	font-size: 20px;
+	font-weight: 600;
+	text-decoration: none;
+	color: #4A5559;
+	width: 108px;
+}
+
+
 
 /* REGISTER SITE */
 
@@ -356,11 +467,54 @@ form.register-form .register-btn:hover, form.login-form .login-form-btn:hover {
     font-size: 18px;
 }
 
+/* RESET PASSWORD PAGE */
+
+.forgot-password-section {
+	padding: 120px 0 150px 0;
+}
+
+.forgot-password-section #forgotPasswordForm .login-form-box h1 {
+	text-transform: uppercase;
+	width: 500px;
+	position: relative;
+	left: calc(50% - (500px / 2));
+	color: #4A5559;
+	font-weight: 900;
+	font-size: 40px;
+	text-align: center;
+	margin: 0 auto 80px auto;
+	/*padding: 50px 0 40px 0;*/
+}
+
+.forgot-password-section #forgotPasswordForm .login-form-box .login-form {
+	width: 500px;
+	position: relative;
+	left: calc(50% - (500px / 2));
+	margin: auto;
+}
+
+.forgot-password-section #forgotPasswordForm .login-form-box .login-form .login-form-btn {
+	cursor: pointer;
+}
+
 /* USER-PAGE */
 
 .user-page-section {
 	width: 100%;
 	position: relative;
+}
+
+.user-page-section .user-page-h1 {
+	width: 1260px;
+	padding: 50px 0;
+	margin: auto;
+}
+
+.user-page-section .user-page-h1 h1 {
+	text-transform: uppercase;
+	color: #4A5559;
+	font-weight: 900;
+	font-size: 40px;
 }
 
 .user-page-container {
@@ -370,6 +524,54 @@ form.register-form .register-btn:hover, form.login-form .login-form-btn:hover {
 	flex-direction: row;
 	justify-content: space-between;
 }
+
+.user-page-container .column {
+	background: #6E8D99;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+#rezerwacje-lista li {
+	background: #66b8d9;
+	border-radius: 20px;
+	padding: 20px 10px;
+}
+
+#rezerwacje-niepotwierdzone-lista li {
+	background: #D9A266;
+	border-radius: 20px;
+	padding: 20px 10px;
+}
+
+.user-avatar h4 {
+	margin-bottom: 20px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #4A5559;
+}
+
+.user-information-table tr td input {
+	border-radius: 20px;
+	border-color: #66b8d9;
+}
+
+.user-information-table tr td textarea {
+	height: 200px;
+	border-radius: 20px;
+	border-color: #66b8d9;
+}
+
+/*.user-page-container .column a.btn, .user-page-container .column .user-avatar a,  {*/
+/*	text-decoration: none;*/
+/*	color: #4A5559;*/
+/*	font-weight: bold;*/
+/*	padding: 15px 10px;*/
+/*	margin: 0 10px;*/
+/*	background: #66B8D9;*/
+/*	border-radius: 10px;*/
+/*	box-shadow: 3px 3px 3px rgba(0, 0, 0, .20);*/
+/*	transition: all .2s ease-in-out;*/
+/*}*/
 
 table.user-information-table {
 	width: 100%;
@@ -421,6 +623,31 @@ table.user-information-table .form-actions {
 	z-index: 10;
 }
 
+.login-form {
+
+}
+
+.login-form-remember {
+	display: flex;
+	flex-direction: row!important;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0!important;
+	margin-top: -20px!important;
+}
+
+.login-form-remember label {
+	margin-left: 10px;
+}
+
+.login-form-forgot-register {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 30px;
+	text-decoration: none;
+	color: #4A5559;
+}
+
 .login-hidden {
 	position: absolute;
 	top: -400px;
@@ -440,6 +667,327 @@ table.user-information-table .form-actions {
 	background: #fff;
 }
 
+/* ADMIN PAGE */
+
+.admin-section {
+	width: 100%;
+	position: relative;
+}
+
+.admin-section .admin-page-h1 h1 {
+	text-transform: uppercase;
+	color: #4A5559;
+	font-weight: 600;
+	font-size: 40px;
+	width: 1260px;
+	padding: 50px 0;
+	margin: auto;
+}
+
+.admin-section .container {
+	width: 1260px;
+	margin: 10px auto 100px auto;
+	height: auto;
+}
+
+.admin-section .container .column {
+	background: #6E8D99;
+	padding: 20px;
+	border-radius: 20px;
+
+}
+
+.admin-section .container .column h2 {
+	color:#D9A266;
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.admin-section .container .column #rezerwacje-lista {
+	background: #66b8d9;
+	border-radius: 20px;
+	padding: 20px 10px;
+	margin: 10px auto;
+}
+
+.admin-section .container .column form input {
+	border-color: #66b8d9;
+	border-radius: 20px;
+}
+
+.admin-section .container .column form textarea {
+	border-color: #66b8d9;
+	border-radius: 20px;
+}
+
+.admin-section .container .column form input#admin-send {
+	text-decoration: none;
+	color: #4A5559;
+	font-weight: bold;
+	padding: 15px 10px;
+	margin: 0 10px;
+	background: #66B8D9;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .20);
+	transition: all .2s ease-in-out;
+	border: none;
+	cursor: pointer;
+}
+
+/* LISTA WYDARZEŃ */
+
+.event-page-section {
+	width: 100%;
+	background: #6E8D99;
+	padding: 50px 0 120px 0;
+}
+
+.event-page-section div h1 {
+	width: 1260px;
+	margin: auto;
+	font-size: 28px;
+	font-weight: 900;
+	color: #4A5559;
+	text-decoration: none;
+	padding: 20px 0;
+	text-transform: capitalize;
+	text-align: left;
+}
+
+#event-list {
+	width: 1260px;
+	margin: auto;
+}
+
+#event-list .row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	position: relative;
+}
+
+#event-list .row a {
+	position: relative;
+	display: inline-block;
+	background: #D9A266;
+	width: 550px;
+	height: 260px;
+	margin: 20px 30px;
+	border-radius: 20px;
+	border-top: 5px;
+	border-right: 5px;
+	border-bottom: 5px;
+	border-style: solid;
+	border-color: #FFF;
+	box-sizing: border-box;
+}
+
+#event-list .row a h2 {
+	display: inline-block;
+	position: absolute;
+	top: 40px;
+	right: 29px;
+	color: #4A5559;
+	font-weight: 800;
+	font-size: 22px;
+	width: 230px;
+	height: auto;
+	text-align: center;
+}
+
+#event-list .row a img {
+	border-top: 5px;
+	border-left: 5px;
+	border-bottom: 5px;
+	border-style: solid;
+	border-color: #4A5559;
+	border-radius: 20px 0 0 20px;
+	position: absolute;
+	top: -5px;
+	left: 0;
+	box-sizing: content-box;
+}
+
+#event-list .row a p {
+	display: inline-block;
+	position: absolute;
+	bottom: 60px;
+	right: 85px;
+	font-size: 20px;
+	font-weight: 600;
+	text-decoration: none;
+	color: #4A5559;
+	width: 108px;
+}
+
+.event-page-section .event {
+	display: inline-block;
+	width: 22%;
+	margin: 1%;
+	vertical-align: top;
+	text-align: center;
+}
+
+.event-page-section .event-image {
+	width: 100%;
+	height: auto;
+}
+
+.event-page-section h1 {
+	text-align: center;
+	color: #4A5559;
+}
+
+.event-page-section a {
+	color: #4A5559;
+}
+
+.event-page-section p {
+	color: #4A5559;
+}
+
+/* PODSTRONA WYDARZENIA */
+
+section.podstrona_wydarzenia-section {
+	width: 100%;
+	padding: 100px 0;
+}
+
+section.podstrona_wydarzenia-section .wydarzenia-h1 {
+	width: 1260px;
+	margin: auto;
+	padding: 0 0 50px 0;
+}
+
+section.podstrona_wydarzenia-section h1 {
+	font-size: 28px;
+	font-weight: 800;
+	color: #4A5559;
+	text-decoration: none;
+	padding: 10px 0;
+	text-transform: capitalize;
+}
+
+section.podstrona_wydarzenia-section .container {
+	width: 1260px;
+	margin: auto;
+}
+
+.podstrona_wydarzenia-section #image {
+	height: 300px;
+	width: 300px;
+	border: 5px solid #6E8D99;
+	border-radius: 20px;
+}
+
+.podstrona_wydarzenia-section p {
+	color:#4A5559;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 25px;
+	text-align: justify;
+}
+
+.podstrona_wydarzenia-section .container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.podstrona_wydarzenia-section .column {
+	flex: 1;
+	margin-bottom: 15px;
+}
+
+.podstrona_wydarzenia-section .container .column p #description {
+	display: block;
+	background: #D9A266;
+	padding: 30px;
+	border-radius: 20px;
+	position: relative;
+	width: 800px;
+}
+
+.podstrona_wydarzenia-section #dynamicLink {
+	text-decoration: none;
+	color: #4A5559;
+	font-weight: bold;
+	padding: 15px 10px;
+	margin: 0 10px;
+	background: #66B8D9;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .20);
+	transition: all .2s ease-in-out;
+	border: none;
+	cursor: pointer;
+}
+
+/* STRONA REZERWACJI STOISKA */
+
+.rezerwacja-stoiska-section {
+	width: 100%;
+	padding: 50px 0 150px 0;
+}
+
+.rezerwacja-stoiska-h1 {
+	width: 1260px;
+	margin: auto;
+	font-size: 28px;
+	font-weight: 900;
+	color: #4A5559;
+	text-decoration: none;
+	padding: 40px 0;
+	text-transform: capitalize;
+	text-align: left;
+}
+
+.rezerwacja-stoiska-section .container {
+	width: 1260px;
+	margin: auto;
+}
+
+.rezerwacja-stoiska-section .container .column {
+	background: #6E8D99;
+	padding: 20px;
+	border-radius: 20px;
+	color: #4A5559;
+}
+
+.rezerwacja-stoiska-section .container .column input.rezerwacja-submit {
+	text-decoration: none;
+	color: #4A5559;
+	font-weight: bold;
+	padding: 15px 10px;
+	margin: 0 10px;
+	background: #66B8D9;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .20);
+	transition: all .2s ease-in-out;
+	border: none;
+	cursor: pointer;
+}
+
+/* KALENDARZ */
+
+#calendar-container {
+	width: 100%;
+	padding: 50px 0 150px 0;
+}
+
+
+/* CONTACT */
+
+.contact-container {
+	width: 500px;
+	padding: 30px;
+	border-radius: 20px;
+	background: #6E8D99;
+	font-weight: 600px;
+	color: #4A5559;
+	margin: 50px auto 150px auto;
+}
 
 /* FOOTER */
 
@@ -451,9 +999,10 @@ table.user-information-table .form-actions {
 }
 
 #background {
-	background-image: url('../footer/photo1.png');
+	background-image: url('../src/footbackg1.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position-y: bottom;
 	position: relative;
 	bottom: 0;
 	left: 0;
@@ -466,7 +1015,7 @@ table.user-information-table .form-actions {
 	width: 100%;
 	height: 100%;
 	background-color: #3b5998;
-	opacity: 0.8;
+	opacity: 0.95;
 }
 
 #tekst {
@@ -635,6 +1184,29 @@ table.user-information-table .form-actions {
 		overflow: hidden;
 	}
 
+}
+
+@media screen and (max-width: 768px) {
+	.event {
+		width: 100%;
+		margin: 0;
+	}
+
+	.podstrona_wydarzenia-section .container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.podstrona_wydarzenia-section h1 {
+		text-align: center;
+	}
+
+	.podstrona_wydarzenia-section #duration {
+		text-align: center;
+	}
+
+	.podstrona_wydarzenia-section #date {
+		text-align: center;
+	}
 }
 
 

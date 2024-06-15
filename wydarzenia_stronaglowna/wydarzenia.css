@@ -1,0 +1,33 @@
+
+
+/*.row {*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: center; */
+/*}*/
+
+/*.event {*/
+/*    flex: 1;*/
+/*    max-width: calc(25% - 16px);*/
+/*    box-sizing: border-box;*/
+/*    text-align: center;*/
+/*    padding: 16px; */
+/*}*/
+
+/*.event-image {*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*    .event {*/
+/*        max-width: calc(50% - 16px); */
+/*    }*/
+/*}*/
+
+/*@media (max-width: 480px) {*/
+/*    .event {*/
+/*        max-width: 100%; */
+/*    }*/
+/*}*/

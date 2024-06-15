@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konto administratora</title>
-    <link rel="stylesheet" href="admin.css">
-</head>
-<body>
-    <h1>Konto administratora</h1>
+<?php require 'header.php';
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.php");
+    exit();
+}
+?>
+<link rel="stylesheet" href="admin.css">
+
+<section class="admin-section">
+    <div class="admin-page-h1">
+        <h1>Konto administratora</h1>
+    </div>
     <div class="container">
         <div class="column">
             <h2>Rezerwacje niezatwierdzone</h2>
@@ -32,9 +34,9 @@
                 <label id="description" for="description">Opis wydarzenia:</label><br>
                 <textarea id="description" name="description" rows="8" cols="70"></textarea><br><br>
                 
-                <input type="submit" value="Wyślij">
+                <input id="admin-send" type="submit" value="Wyślij">
             </form>
         </div>
     </div>
-</body>
-</html>
+</section>
+<?php require 'footer.php';?>

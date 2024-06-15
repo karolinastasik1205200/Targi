@@ -34,7 +34,7 @@
         $registerErr = '';
 
 
-        if (!preg_match('/^[a-zA-Z0-9][a-zA-Z0-9\s]*[a-zA-Z0-9]$/', $username)) {
+        if (!preg_match('/^[a-zA-Z0-9ĄĆĘŁŃÓŚŹŻąćęłńóśźż\s.-]+$/', $username)) {
             $usernameErr = 'Dozwolone są tylko litery i cyfry oraz spacje!';
         } elseif (empty($username)) {
             $usernameErr = 'Pole nazwy użytkownika nie może być puste, ani posiadać wyłącznie znaków spacji!';
@@ -169,3 +169,4 @@
     </div>
 </section>
 
+<?php require 'footer.php';?>

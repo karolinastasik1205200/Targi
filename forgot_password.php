@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Resetowanie hasła</title>
-</head>
-<body>
+<?php require 'header.php';?>
     <section class="forgot-password-section">
         <div id="forgotPasswordForm" class="">
             <!--    <div class="login-background" onclick="toggleLoginForm()"></div>-->
@@ -23,5 +17,5 @@
             </div>
         </div>
     </section>
-</body>
-</html>
+
+<?php require 'footer.php';?>

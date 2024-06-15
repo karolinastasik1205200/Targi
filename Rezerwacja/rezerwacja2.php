@@ -5,8 +5,10 @@ if (!isset($_SESSION['user_id'])) {
 }
 ?>
 <link rel="stylesheet" href="rezerwacja.css">
-
-    <h1>Zarezerwuj stoisko!</h1>
+<section class="rezerwacja-stoiska-section">
+    <div class="rezerwacja-stoiska-h1">
+        <h1>Zarezerwuj stoisko!</h1>
+    </div>
     <div class="container">
         <div class="column">
             <p id="title"></p>
@@ -97,7 +99,7 @@ if (!isset($_SESSION['user_id'])) {
                 <script src="id_wydarzenia.js"></script>
                 <input type="hidden" id="id_wydarzenia" name="id_wydarzenia">
                 <script src="script.js"></script>
-                <input type="submit" value="Wyślij">
+                <input class="rezerwacja-submit" type="submit" value="Wyślij">
             </form>
         </div>
         </div>
@@ -105,4 +107,5 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
     <script src="rezerwacja.js"></script>
+</section>
 <?php require 'footer.php'; ?>
